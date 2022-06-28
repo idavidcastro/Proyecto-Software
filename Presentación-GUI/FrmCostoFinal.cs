@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Presentación_GUI
 {
-    public partial class FrmNuevoProductoStock : Form
+    public partial class FrmCostoFinal : Form
     {
-        public FrmNuevoProductoStock()
+        public FrmCostoFinal()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

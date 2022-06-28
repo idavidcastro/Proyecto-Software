@@ -1,7 +1,7 @@
 ﻿
 namespace Presentación_GUI
 {
-    partial class FrmNuevoProductoStock
+    partial class FrmCostoFinal
     {
         /// <summary>
         /// Required designer variable.
@@ -35,22 +35,21 @@ namespace Presentación_GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(505, 308);
+            this.label1.Location = new System.Drawing.Point(209, 265);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 17);
+            this.label1.Size = new System.Drawing.Size(127, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "nuevo producto stock";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Calcular costo final";
             // 
-            // FrmNuevoProductoStock
+            // FrmCostoFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 833);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmNuevoProductoStock";
-            this.Text = "FrmNuevoProductoStock";
+            this.Name = "FrmCostoFinal";
+            this.Text = "frmcostofinal";
             this.ResumeLayout(false);
             this.PerformLayout();
 

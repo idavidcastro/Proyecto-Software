@@ -108,8 +108,9 @@ namespace Presentación_GUI
             this.BtnCerrarLogin.TabIndex = 6;
             this.BtnCerrarLogin.Text = "Cerrar";
             this.BtnCerrarLogin.UseVisualStyleBackColor = false;
+            this.BtnCerrarLogin.Click += new System.EventHandler(this.BtnCerrarLogin_Click);
             // 
-            // Form1
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,9 +122,10 @@ namespace Presentación_GUI
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Usuario);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

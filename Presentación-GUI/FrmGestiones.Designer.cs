@@ -29,7 +29,6 @@ namespace Presentación_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnGestionarEmpaque = new System.Windows.Forms.Button();
@@ -40,18 +39,11 @@ namespace Presentación_GUI
             this.PanelBlancoGestiones = new System.Windows.Forms.Panel();
             this.BtnVolverGestiones = new System.Windows.Forms.Button();
             this.BtnCostoFinal = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(98, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 98);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -80,7 +72,7 @@ namespace Presentación_GUI
             // 
             // BtnGestionarEmpaque
             // 
-            this.BtnGestionarEmpaque.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGestionarEmpaque.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGestionarEmpaque.Location = new System.Drawing.Point(3, 83);
             this.BtnGestionarEmpaque.Name = "BtnGestionarEmpaque";
             this.BtnGestionarEmpaque.Size = new System.Drawing.Size(311, 42);
@@ -91,7 +83,7 @@ namespace Presentación_GUI
             // 
             // BtnGestionarEmbalaje
             // 
-            this.BtnGestionarEmbalaje.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGestionarEmbalaje.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGestionarEmbalaje.Location = new System.Drawing.Point(3, 131);
             this.BtnGestionarEmbalaje.Name = "BtnGestionarEmbalaje";
             this.BtnGestionarEmbalaje.Size = new System.Drawing.Size(311, 42);
@@ -102,7 +94,7 @@ namespace Presentación_GUI
             // 
             // BtnProductoStock
             // 
-            this.BtnProductoStock.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProductoStock.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProductoStock.Location = new System.Drawing.Point(3, 35);
             this.BtnProductoStock.Name = "BtnProductoStock";
             this.BtnProductoStock.Size = new System.Drawing.Size(311, 42);
@@ -113,7 +105,7 @@ namespace Presentación_GUI
             // 
             // BtnGestionarEstibado
             // 
-            this.BtnGestionarEstibado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGestionarEstibado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGestionarEstibado.Location = new System.Drawing.Point(3, 179);
             this.BtnGestionarEstibado.Name = "BtnGestionarEstibado";
             this.BtnGestionarEstibado.Size = new System.Drawing.Size(311, 42);
@@ -124,7 +116,7 @@ namespace Presentación_GUI
             // 
             // BtnGestionarContenedor
             // 
-            this.BtnGestionarContenedor.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGestionarContenedor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGestionarContenedor.Location = new System.Drawing.Point(3, 227);
             this.BtnGestionarContenedor.Name = "BtnGestionarContenedor";
             this.BtnGestionarContenedor.Size = new System.Drawing.Size(311, 42);
@@ -142,23 +134,34 @@ namespace Presentación_GUI
             // 
             // BtnVolverGestiones
             // 
-            this.BtnVolverGestiones.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVolverGestiones.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVolverGestiones.Location = new System.Drawing.Point(15, 746);
             this.BtnVolverGestiones.Name = "BtnVolverGestiones";
             this.BtnVolverGestiones.Size = new System.Drawing.Size(314, 42);
             this.BtnVolverGestiones.TabIndex = 6;
-            this.BtnVolverGestiones.Text = "Volver";
+            this.BtnVolverGestiones.Text = "Cerrar";
             this.BtnVolverGestiones.UseVisualStyleBackColor = true;
+            this.BtnVolverGestiones.Click += new System.EventHandler(this.BtnVolverGestiones_Click);
             // 
             // BtnCostoFinal
             // 
-            this.BtnCostoFinal.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCostoFinal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCostoFinal.Location = new System.Drawing.Point(0, 326);
             this.BtnCostoFinal.Name = "BtnCostoFinal";
             this.BtnCostoFinal.Size = new System.Drawing.Size(311, 42);
             this.BtnCostoFinal.TabIndex = 6;
             this.BtnCostoFinal.Text = "Costo Final";
             this.BtnCostoFinal.UseVisualStyleBackColor = true;
+            this.BtnCostoFinal.Click += new System.EventHandler(this.BtnCostoFinal_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(98, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 98);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmGestiones
             // 
@@ -171,9 +174,10 @@ namespace Presentación_GUI
             this.Name = "FrmGestiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGestion";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

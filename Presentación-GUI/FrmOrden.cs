@@ -41,5 +41,14 @@ namespace Presentación_GUI
             frmGestiones.Show();
             Hide();
         }
+
+        private void BtnCerrarOrden_Click(object sender, EventArgs e)
+        {
+            DialogResult resul = MessageBox.Show("¿Está seguro que quiere cerrar la aplicación?", "Cerrar", MessageBoxButtons.YesNo);
+            if (resul == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

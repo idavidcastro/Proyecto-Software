@@ -29,8 +29,8 @@ namespace Presentación_GUI
         }
         private void BtnProductoStock_Click(object sender, EventArgs e)
         {
-            FrmNuevoProductoStock frmNuevoProductoStock = new FrmNuevoProductoStock();
-            MostrarFormulario(frmNuevoProductoStock);
+            FrmProductos frmProductos = new FrmProductos();
+            MostrarFormulario(frmProductos);
         }
 
         private void BtnGestionarEmpaque_Click(object sender, EventArgs e)
@@ -55,6 +55,21 @@ namespace Presentación_GUI
         {
             FrmGestionarContenedor frmGestionarContenedor = new FrmGestionarContenedor();
             MostrarFormulario(frmGestionarContenedor);
+        }
+
+        private void BtnCostoFinal_Click(object sender, EventArgs e)
+        {
+            FrmCostoFinal frmCostoFinal = new FrmCostoFinal();
+            MostrarFormulario(frmCostoFinal);
+        }
+
+        private void BtnVolverGestiones_Click(object sender, EventArgs e)
+        {
+            DialogResult resul = MessageBox.Show("¿Está seguro que quiere cerrar la aplicación?", "Cerrar", MessageBoxButtons.YesNo);
+            if (resul == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Presentación_GUI
             this.BtnConsultarEmbalaje = new System.Windows.Forms.Button();
             this.CmbReferenciaConsultaEmbalaje = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.CmbReferenciaEmalaje = new System.Windows.Forms.ComboBox();
+            this.CmbReferenciaEmbalaje = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.BtnEditarEmbalaje = new System.Windows.Forms.Button();
             this.BtnActEmbalaje = new System.Windows.Forms.Button();
@@ -64,7 +64,7 @@ namespace Presentación_GUI
             // 
             this.dataGridViewConsultaEmbalaje.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.dataGridViewConsultaEmbalaje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewConsultaEmbalaje.Location = new System.Drawing.Point(58, 603);
+            this.dataGridViewConsultaEmbalaje.Location = new System.Drawing.Point(49, 603);
             this.dataGridViewConsultaEmbalaje.Name = "dataGridViewConsultaEmbalaje";
             this.dataGridViewConsultaEmbalaje.RowHeadersWidth = 51;
             this.dataGridViewConsultaEmbalaje.RowTemplate.Height = 24;
@@ -76,7 +76,7 @@ namespace Presentación_GUI
             this.BtnConsultarEmbalaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.BtnConsultarEmbalaje.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConsultarEmbalaje.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnConsultarEmbalaje.Location = new System.Drawing.Point(619, 528);
+            this.BtnConsultarEmbalaje.Location = new System.Drawing.Point(630, 528);
             this.BtnConsultarEmbalaje.Name = "BtnConsultarEmbalaje";
             this.BtnConsultarEmbalaje.Size = new System.Drawing.Size(214, 48);
             this.BtnConsultarEmbalaje.TabIndex = 67;
@@ -86,7 +86,7 @@ namespace Presentación_GUI
             // CmbReferenciaConsultaEmbalaje
             // 
             this.CmbReferenciaConsultaEmbalaje.FormattingEnabled = true;
-            this.CmbReferenciaConsultaEmbalaje.Location = new System.Drawing.Point(452, 543);
+            this.CmbReferenciaConsultaEmbalaje.Location = new System.Drawing.Point(463, 543);
             this.CmbReferenciaConsultaEmbalaje.Name = "CmbReferenciaConsultaEmbalaje";
             this.CmbReferenciaConsultaEmbalaje.Size = new System.Drawing.Size(106, 24);
             this.CmbReferenciaConsultaEmbalaje.TabIndex = 66;
@@ -95,19 +95,19 @@ namespace Presentación_GUI
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(316, 543);
+            this.label15.Location = new System.Drawing.Point(327, 543);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(112, 20);
             this.label15.TabIndex = 65;
             this.label15.Text = "Ref. Embalaje:";
             // 
-            // CmbReferenciaEmalaje
+            // CmbReferenciaEmbalaje
             // 
-            this.CmbReferenciaEmalaje.FormattingEnabled = true;
-            this.CmbReferenciaEmalaje.Location = new System.Drawing.Point(1036, 92);
-            this.CmbReferenciaEmalaje.Name = "CmbReferenciaEmalaje";
-            this.CmbReferenciaEmalaje.Size = new System.Drawing.Size(106, 24);
-            this.CmbReferenciaEmalaje.TabIndex = 64;
+            this.CmbReferenciaEmbalaje.FormattingEnabled = true;
+            this.CmbReferenciaEmbalaje.Location = new System.Drawing.Point(1036, 92);
+            this.CmbReferenciaEmbalaje.Name = "CmbReferenciaEmbalaje";
+            this.CmbReferenciaEmbalaje.Size = new System.Drawing.Size(106, 24);
+            this.CmbReferenciaEmbalaje.TabIndex = 64;
             // 
             // label12
             // 
@@ -168,7 +168,7 @@ namespace Presentación_GUI
             this.BtnRegistrarEmbalaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.BtnRegistrarEmbalaje.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegistrarEmbalaje.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnRegistrarEmbalaje.Location = new System.Drawing.Point(478, 406);
+            this.BtnRegistrarEmbalaje.Location = new System.Drawing.Point(351, 403);
             this.BtnRegistrarEmbalaje.Name = "BtnRegistrarEmbalaje";
             this.BtnRegistrarEmbalaje.Size = new System.Drawing.Size(214, 48);
             this.BtnRegistrarEmbalaje.TabIndex = 58;
@@ -241,31 +241,31 @@ namespace Presentación_GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(252, 240);
+            this.label5.Location = new System.Drawing.Point(213, 240);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 20);
+            this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 41;
-            this.label5.Text = "Alto:";
+            this.label5.Text = "Alto (Cm):";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(232, 192);
+            this.label4.Location = new System.Drawing.Point(193, 192);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 20);
+            this.label4.Size = new System.Drawing.Size(101, 20);
             this.label4.TabIndex = 40;
-            this.label4.Text = "Ancho:";
+            this.label4.Text = "Ancho (Cm):";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(239, 149);
+            this.label3.Location = new System.Drawing.Point(200, 149);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 20);
+            this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 39;
-            this.label3.Text = "Largo:";
+            this.label3.Text = "Largo (Cm):";
             // 
             // label1
             // 
@@ -349,7 +349,7 @@ namespace Presentación_GUI
             this.Controls.Add(this.BtnConsultarEmbalaje);
             this.Controls.Add(this.CmbReferenciaConsultaEmbalaje);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.CmbReferenciaEmalaje);
+            this.Controls.Add(this.CmbReferenciaEmbalaje);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.BtnEditarEmbalaje);
             this.Controls.Add(this.BtnActEmbalaje);
@@ -382,7 +382,7 @@ namespace Presentación_GUI
         private System.Windows.Forms.Button BtnConsultarEmbalaje;
         private System.Windows.Forms.ComboBox CmbReferenciaConsultaEmbalaje;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox CmbReferenciaEmalaje;
+        private System.Windows.Forms.ComboBox CmbReferenciaEmbalaje;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button BtnEditarEmbalaje;
         private System.Windows.Forms.Button BtnActEmbalaje;

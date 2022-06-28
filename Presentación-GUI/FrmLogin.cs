@@ -28,5 +28,19 @@ namespace Presentación_GUI
             frmOrden.Show();
             this.Hide();
         }
+
+        private void BtnCerrarLogin_Click(object sender, EventArgs e)
+        {
+            DialogResult resul = MessageBox.Show("¿Está seguro que quiere cerrar la aplicación?", "Cerrar", MessageBoxButtons.YesNo);
+            if (resul == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
