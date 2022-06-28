@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Presentación_GUI
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmGestionarEstibado : Form
     {
-        public FrmPrincipal()
+        public FrmGestionarEstibado()
         {
             InitializeComponent();
         }

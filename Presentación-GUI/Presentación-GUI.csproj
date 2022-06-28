@@ -49,23 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmGestionarContenedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmGestionarContenedor.Designer.cs">
+      <DependentUpon>FrmGestionarContenedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmOrden.cs">
+    <Compile Include="FrmGestionarEmbalaje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOrden.Designer.cs">
-      <DependentUpon>FrmOrden.cs</DependentUpon>
+    <Compile Include="FrmGestionarEmbalaje.Designer.cs">
+      <DependentUpon>FrmGestionarEmbalaje.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPrincipal.cs">
+    <Compile Include="FrmGestionarEmpaque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPrincipal.Designer.cs">
-      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    <Compile Include="FrmGestionarEmpaque.Designer.cs">
+      <DependentUpon>FrmGestionarEmpaque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionarEstibado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionarEstibado.Designer.cs">
+      <DependentUpon>FrmGestionarEstibado.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -73,19 +79,49 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNuevoProductoStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoProductoStock.Designer.cs">
+      <DependentUpon>FrmNuevoProductoStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrden.Designer.cs">
+      <DependentUpon>FrmOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestiones.Designer.cs">
+      <DependentUpon>FrmGestiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestionarContenedor.resx">
+      <DependentUpon>FrmGestionarContenedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionarEmbalaje.resx">
+      <DependentUpon>FrmGestionarEmbalaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionarEmpaque.resx">
+      <DependentUpon>FrmGestionarEmpaque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionarEstibado.resx">
+      <DependentUpon>FrmGestionarEstibado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoProductoStock.resx">
+      <DependentUpon>FrmNuevoProductoStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOrden.resx">
       <DependentUpon>FrmOrden.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPrincipal.resx">
-      <DependentUpon>FrmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestiones.resx">
+      <DependentUpon>FrmGestiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

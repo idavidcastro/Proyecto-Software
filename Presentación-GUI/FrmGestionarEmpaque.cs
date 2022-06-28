@@ -10,23 +10,26 @@ using System.Windows.Forms;
 
 namespace Presentación_GUI
 {
-    public partial class FrmLogin : Form
+    public partial class FrmGestionarEmpaque : Form
     {
-        public FrmLogin()
+        public FrmGestionarEmpaque()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void BtnIniciarSesionLogin_Click(object sender, EventArgs e)
+        private void FrmGestionarEmpaque_Load(object sender, EventArgs e)
         {
-            FrmOrden frmOrden = new FrmOrden();
-            frmOrden.Show();
-            this.Hide();
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

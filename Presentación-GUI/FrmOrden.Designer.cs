@@ -50,6 +50,7 @@ namespace Presentación_GUI
             this.BtnNuevaOrden.TabIndex = 0;
             this.BtnNuevaOrden.Text = "Nueva Orden";
             this.BtnNuevaOrden.UseVisualStyleBackColor = false;
+            this.BtnNuevaOrden.Click += new System.EventHandler(this.BtnNuevaOrden_Click);
             // 
             // BtnConsultarOrden
             // 

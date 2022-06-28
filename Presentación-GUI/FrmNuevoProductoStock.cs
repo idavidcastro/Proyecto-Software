@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Presentación_GUI
 {
-    public partial class Form1 : Form
+    public partial class FrmNuevoProductoStock : Form
     {
-        public Form1()
+        public FrmNuevoProductoStock()
         {
             InitializeComponent();
         }
@@ -20,13 +20,6 @@ namespace Presentación_GUI
         private void label1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void BtnIniciarSesionLogin_Click(object sender, EventArgs e)
-        {
-            FrmOrden frmOrden = new FrmOrden();
-            frmOrden.Show();
-            this.Hide();
         }
     }
 }

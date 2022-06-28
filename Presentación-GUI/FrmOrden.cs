@@ -34,5 +34,12 @@ namespace Presentación_GUI
                 PanelConsultarOrden.Visible = true;
             }
         }
+
+        private void BtnNuevaOrden_Click(object sender, EventArgs e)
+        {
+            FrmGestiones frmGestiones = new FrmGestiones();
+            frmGestiones.Show();
+            Hide();
+        }
     }
 }
