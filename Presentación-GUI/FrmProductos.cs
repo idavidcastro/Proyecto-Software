@@ -98,5 +98,62 @@ namespace Presentación_GUI
                 return;
             }
         }
+
+        private void BtnConsultarProducto_Click(object sender, EventArgs e)
+        {
+            ConsultaReponseProducto respuesta;
+            dataGridViewConsultaProducto.DataSource = null;
+
+            respuesta = productoService.ConsultarListProductos(CmbReferenciaConsultaProducto.Text);
+
+            if (respuesta.Error)
+            {
+                MessageBox.Show(respuesta.Mensaje);
+            }
+            else
+            {
+                dataGridViewConsultaProducto.DataSource = respuesta.Productos;
+            }
+        }
+
+        private void BtnEditarProducto_Click(object sender, EventArgs e)
+        {
+            BusquedaReponse respuesta;
+
+            respuesta = productoService.BuscarProducto(CmbReferenciaProducto.Text);
+
+            if (respuesta.Error)
+            {
+                MessageBox.Show(respuesta.Mensaje);
+            }
+            else
+            {
+                TxtRefProducto.Text = respuesta.Producto.RefProducto;
+                TxtNombreProducto.Text = respuesta.Producto.NombreProducto;
+                TxtPesoProducto.Text = respuesta.Producto.PesoProducto.ToString();
+                TxtPrecioProducto.Text = respuesta.Producto.PrecioProducto.ToString();
+
+            }
+
+        }
+
+        private void BtnActProducto_Click(object sender, EventArgs e)
+        {
+            producto = new Producto();
+
+            producto.RefProducto = TxtRefProducto.Text;
+            producto.NombreProducto = TxtNombreProducto.Text;
+            producto.PesoProducto = decimal.Parse(TxtPesoProducto.Text);
+            producto.PrecioProducto = decimal.Parse(TxtPrecioProducto.Text);
+
+            string mensaje = productoService.ModificarProducto(producto, CmbReferenciaProducto.Text);
+            MessageBox.Show(mensaje, "Modificar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            string mensaje = productoService.EliminarProducto(CmbReferenciaProducto.Text);
+            MessageBox.Show(mensaje, "Modificar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

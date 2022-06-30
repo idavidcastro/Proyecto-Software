@@ -74,10 +74,15 @@ namespace Presentación_GUI
             this.BtnConsultarProducto.TabIndex = 96;
             this.BtnConsultarProducto.Text = "Consultar";
             this.BtnConsultarProducto.UseVisualStyleBackColor = false;
+            this.BtnConsultarProducto.Click += new System.EventHandler(this.BtnConsultarProducto_Click);
             // 
             // CmbReferenciaConsultaProducto
             // 
             this.CmbReferenciaConsultaProducto.FormattingEnabled = true;
+            this.CmbReferenciaConsultaProducto.Items.AddRange(new object[] {
+            "PD01",
+            "PD02",
+            "PD05"});
             this.CmbReferenciaConsultaProducto.Location = new System.Drawing.Point(463, 543);
             this.CmbReferenciaConsultaProducto.Name = "CmbReferenciaConsultaProducto";
             this.CmbReferenciaConsultaProducto.Size = new System.Drawing.Size(106, 24);
@@ -96,6 +101,10 @@ namespace Presentación_GUI
             // CmbReferenciaProducto
             // 
             this.CmbReferenciaProducto.FormattingEnabled = true;
+            this.CmbReferenciaProducto.Items.AddRange(new object[] {
+            "PD01",
+            "PD02",
+            "PD03"});
             this.CmbReferenciaProducto.Location = new System.Drawing.Point(1036, 92);
             this.CmbReferenciaProducto.Name = "CmbReferenciaProducto";
             this.CmbReferenciaProducto.Size = new System.Drawing.Size(106, 24);
@@ -122,6 +131,7 @@ namespace Presentación_GUI
             this.BtnEditarProducto.TabIndex = 91;
             this.BtnEditarProducto.Text = "Editar";
             this.BtnEditarProducto.UseVisualStyleBackColor = false;
+            this.BtnEditarProducto.Click += new System.EventHandler(this.BtnEditarProducto_Click);
             // 
             // BtnActProducto
             // 
@@ -134,6 +144,7 @@ namespace Presentación_GUI
             this.BtnActProducto.TabIndex = 90;
             this.BtnActProducto.Text = "Actualizar";
             this.BtnActProducto.UseVisualStyleBackColor = false;
+            this.BtnActProducto.Click += new System.EventHandler(this.BtnActProducto_Click);
             // 
             // BtnEliminarProducto
             // 
@@ -146,6 +157,7 @@ namespace Presentación_GUI
             this.BtnEliminarProducto.TabIndex = 89;
             this.BtnEliminarProducto.Text = "Eliminar";
             this.BtnEliminarProducto.UseVisualStyleBackColor = false;
+            this.BtnEliminarProducto.Click += new System.EventHandler(this.BtnEliminarProducto_Click);
             // 
             // panel2
             // 

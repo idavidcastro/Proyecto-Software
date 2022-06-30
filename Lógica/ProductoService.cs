@@ -96,5 +96,92 @@ namespace Lógica
 
 
         }
+
+        public ConsultaReponseProducto ConsultarListProductos(string refproducto)
+        {
+            try
+            {
+                connectionManager.Open();
+                
+                 return new ConsultaReponseProducto(productoRepository.ConsultarTodosLosProductos(refproducto));
+            }
+            catch (Exception exception)
+            {
+                return new ConsultaReponseProducto("Se presentó el siguiente error: " + exception.Message);
+            }
+            finally
+            {
+                connectionManager.Close();
+            }
+        }
+
+        public BusquedaReponse BuscarProducto(string refproducto)
+        {
+            try
+            {
+                connectionManager.Open();
+                if (productoRepository.BuscarProductoPorRef(refproducto) == null)
+                {
+                    return new BusquedaReponse($"El producto con la referencia {refproducto} NO se encuentra registrado");
+
+                }
+                else
+                {
+                    return new BusquedaReponse(productoRepository.BuscarProductoPorRef(refproducto));
+                }
+            }
+            catch (Exception exception)
+            {
+
+                return new BusquedaReponse("Se presentó el siguiente error: " + exception.Message);
+            }
+            finally
+            {
+                connectionManager.Close();
+            }
+
+        }
+
+
+
+    }
+
+    public class ConsultaReponseProducto
+    {
+        public List<Producto> Productos { get; set; }
+        public string Mensaje { get; set; }
+        public bool Error { get; set; }
+
+        public ConsultaReponseProducto(List<Producto> productos)
+        {
+            Productos = productos;
+            Error = false;
+        }
+
+        public ConsultaReponseProducto(string mensaje)
+        {
+            Mensaje = mensaje;
+            Error = true;
+        }
+
+    }
+    public class BusquedaReponse
+    {
+        public Producto Producto { get; set; }
+        public string Mensaje { get; set; }
+        public bool Error { get; set; }
+
+        public BusquedaReponse(Producto producto)
+        {
+            Producto = producto;
+            Error = false;
+        }
+
+        public BusquedaReponse(string mensaje)
+        {
+            Mensaje = mensaje;
+            Error = true;
+        }
+
     }
 }

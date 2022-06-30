@@ -49,8 +49,8 @@ namespace Datos
                         Producto producto = new Producto();
                         producto.RefProducto = reader.GetString(0);
                         producto.NombreProducto = reader.GetString(1);
-                        producto.PesoProducto = reader.GetDecimal(2);
-                        producto.PrecioProducto = reader.GetDecimal(2);
+                        producto.PesoProducto = decimal.Parse(reader.GetString(2));
+                        producto.PrecioProducto = decimal.Parse(reader.GetString(2));
                         
                         return producto;
                     }
@@ -83,6 +83,30 @@ namespace Datos
 
                 command.ExecuteNonQuery();
             }
+        }
+
+        public List<Producto> ConsultarTodosLosProductos(string refproducto)
+        {
+            List<Producto> productos = new List<Producto>();
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "select * from Producto where RefProducto=@RefProducto";
+                command.Parameters.Add(new SqlParameter("@RefProducto", refproducto));
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Producto producto = new Producto();
+                    producto.RefProducto = reader.GetString(0);
+                    producto.NombreProducto = reader.GetString(1);                 
+                    producto.PesoProducto = decimal.Parse(reader.GetString(2));
+                    producto.PrecioProducto = decimal.Parse(reader.GetString(3));
+
+                    productos.Add(producto);
+                }
+                reader.Close();
+            }
+
+            return productos;
         }
     }
 }
