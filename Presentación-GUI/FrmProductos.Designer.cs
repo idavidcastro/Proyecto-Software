@@ -166,6 +166,7 @@ namespace Presentación_GUI
             this.BtnRegistrarProducto.TabIndex = 87;
             this.BtnRegistrarProducto.Text = "Registrar";
             this.BtnRegistrarProducto.UseVisualStyleBackColor = false;
+            this.BtnRegistrarProducto.Click += new System.EventHandler(this.BtnRegistrarProducto_Click);
             // 
             // TxtPrecioProducto
             // 
@@ -174,6 +175,8 @@ namespace Presentación_GUI
             this.TxtPrecioProducto.Name = "TxtPrecioProducto";
             this.TxtPrecioProducto.Size = new System.Drawing.Size(127, 28);
             this.TxtPrecioProducto.TabIndex = 85;
+            this.TxtPrecioProducto.TextChanged += new System.EventHandler(this.TxtPrecioProducto_TextChanged);
+            this.TxtPrecioProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecioProducto_KeyPress);
             // 
             // TxtPesoProducto
             // 
@@ -182,6 +185,8 @@ namespace Presentación_GUI
             this.TxtPesoProducto.Name = "TxtPesoProducto";
             this.TxtPesoProducto.Size = new System.Drawing.Size(127, 28);
             this.TxtPesoProducto.TabIndex = 84;
+            this.TxtPesoProducto.TextChanged += new System.EventHandler(this.TxtPesoProducto_TextChanged);
+            this.TxtPesoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPesoProducto_KeyPress);
             // 
             // TxtNombreProducto
             // 
@@ -190,6 +195,8 @@ namespace Presentación_GUI
             this.TxtNombreProducto.Name = "TxtNombreProducto";
             this.TxtNombreProducto.Size = new System.Drawing.Size(127, 28);
             this.TxtNombreProducto.TabIndex = 83;
+            this.TxtNombreProducto.TextChanged += new System.EventHandler(this.TxtNombreProducto_TextChanged);
+            this.TxtNombreProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombreProducto_KeyPress);
             // 
             // TxtRefProducto
             // 
@@ -198,6 +205,7 @@ namespace Presentación_GUI
             this.TxtRefProducto.Name = "TxtRefProducto";
             this.TxtRefProducto.Size = new System.Drawing.Size(127, 28);
             this.TxtRefProducto.TabIndex = 82;
+            this.TxtRefProducto.TextChanged += new System.EventHandler(this.TxtRefProducto_TextChanged);
             // 
             // label5
             // 
@@ -275,6 +283,7 @@ namespace Presentación_GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProductos";
             this.Text = "FrmProductos";
+            this.Load += new System.EventHandler(this.FrmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsultaProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

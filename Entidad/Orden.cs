@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lógica
+namespace Entidad
 {
-    public class Class1
+    public class Orden
     {
+        public string RefOrden { get; set; }
+
     }
 }
