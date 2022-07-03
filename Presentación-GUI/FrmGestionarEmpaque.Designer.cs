@@ -63,6 +63,8 @@ namespace Presentación_GUI
             this.BtnConsultarEmpaque = new System.Windows.Forms.Button();
             this.dataGridViewConsultaEmpaque = new System.Windows.Forms.DataGridView();
             this.CmbProductos = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.TxtRefProducto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsultaEmpaque)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +80,7 @@ namespace Presentación_GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 38);
+            this.label1.Location = new System.Drawing.Point(74, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 20);
             this.label1.TabIndex = 1;
@@ -88,7 +90,7 @@ namespace Presentación_GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(577, 38);
+            this.label2.Location = new System.Drawing.Point(577, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 2;
@@ -98,7 +100,7 @@ namespace Presentación_GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(177, 131);
+            this.label3.Location = new System.Drawing.Point(177, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 3;
@@ -108,7 +110,7 @@ namespace Presentación_GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(170, 179);
+            this.label4.Location = new System.Drawing.Point(170, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 20);
             this.label4.TabIndex = 4;
@@ -118,7 +120,7 @@ namespace Presentación_GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(576, 131);
+            this.label5.Location = new System.Drawing.Point(576, 173);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 5;
@@ -128,7 +130,7 @@ namespace Presentación_GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(474, 179);
+            this.label6.Location = new System.Drawing.Point(474, 221);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(184, 20);
             this.label6.TabIndex = 6;
@@ -138,7 +140,7 @@ namespace Presentación_GUI
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(450, 88);
+            this.label7.Location = new System.Drawing.Point(450, 130);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(208, 20);
             this.label7.TabIndex = 7;
@@ -149,7 +151,7 @@ namespace Presentación_GUI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(364, 230);
+            this.label8.Location = new System.Drawing.Point(364, 272);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(294, 20);
             this.label8.TabIndex = 8;
@@ -160,7 +162,7 @@ namespace Presentación_GUI
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(90, 88);
+            this.label9.Location = new System.Drawing.Point(90, 130);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(181, 20);
             this.label9.TabIndex = 9;
@@ -170,7 +172,7 @@ namespace Presentación_GUI
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(102, 301);
+            this.label10.Location = new System.Drawing.Point(102, 318);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(502, 20);
             this.label10.TabIndex = 10;
@@ -181,7 +183,7 @@ namespace Presentación_GUI
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(99, 351);
+            this.label11.Location = new System.Drawing.Point(99, 368);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(505, 20);
             this.label11.TabIndex = 11;
@@ -189,87 +191,98 @@ namespace Presentación_GUI
             // 
             // TxtRefEmpaque
             // 
-            this.TxtRefEmpaque.Location = new System.Drawing.Point(302, 38);
+            this.TxtRefEmpaque.Location = new System.Drawing.Point(302, 29);
             this.TxtRefEmpaque.Multiline = true;
             this.TxtRefEmpaque.Name = "TxtRefEmpaque";
             this.TxtRefEmpaque.Size = new System.Drawing.Size(127, 28);
             this.TxtRefEmpaque.TabIndex = 12;
+            this.TxtRefEmpaque.TextChanged += new System.EventHandler(this.TxtRefEmpaque_TextChanged);
             // 
             // TxtPesoProducto
             // 
-            this.TxtPesoProducto.Location = new System.Drawing.Point(302, 88);
+            this.TxtPesoProducto.Location = new System.Drawing.Point(302, 130);
             this.TxtPesoProducto.Multiline = true;
             this.TxtPesoProducto.Name = "TxtPesoProducto";
             this.TxtPesoProducto.Size = new System.Drawing.Size(127, 28);
             this.TxtPesoProducto.TabIndex = 13;
+            this.TxtPesoProducto.TextChanged += new System.EventHandler(this.TxtPesoProducto_TextChanged);
             // 
             // TxtLargoEmpaque
             // 
-            this.TxtLargoEmpaque.Location = new System.Drawing.Point(302, 131);
+            this.TxtLargoEmpaque.Location = new System.Drawing.Point(302, 173);
             this.TxtLargoEmpaque.Multiline = true;
             this.TxtLargoEmpaque.Name = "TxtLargoEmpaque";
             this.TxtLargoEmpaque.Size = new System.Drawing.Size(127, 28);
             this.TxtLargoEmpaque.TabIndex = 14;
+            this.TxtLargoEmpaque.TextChanged += new System.EventHandler(this.TxtLargoEmpaque_TextChanged);
             // 
             // TxtAnchoEmpaque
             // 
-            this.TxtAnchoEmpaque.Location = new System.Drawing.Point(302, 179);
+            this.TxtAnchoEmpaque.Location = new System.Drawing.Point(302, 221);
             this.TxtAnchoEmpaque.Multiline = true;
             this.TxtAnchoEmpaque.Name = "TxtAnchoEmpaque";
             this.TxtAnchoEmpaque.Size = new System.Drawing.Size(127, 28);
             this.TxtAnchoEmpaque.TabIndex = 15;
+            this.TxtAnchoEmpaque.TextChanged += new System.EventHandler(this.TxtAnchoEmpaque_TextChanged);
             // 
             // TxtPrecioProducto
             // 
-            this.TxtPrecioProducto.Location = new System.Drawing.Point(683, 88);
+            this.TxtPrecioProducto.Location = new System.Drawing.Point(683, 130);
             this.TxtPrecioProducto.Multiline = true;
             this.TxtPrecioProducto.Name = "TxtPrecioProducto";
             this.TxtPrecioProducto.Size = new System.Drawing.Size(127, 28);
             this.TxtPrecioProducto.TabIndex = 17;
+            this.TxtPrecioProducto.TextChanged += new System.EventHandler(this.TxtPrecioProducto_TextChanged);
             // 
             // TxtAltoEmpaque
             // 
-            this.TxtAltoEmpaque.Location = new System.Drawing.Point(683, 131);
+            this.TxtAltoEmpaque.Location = new System.Drawing.Point(683, 173);
             this.TxtAltoEmpaque.Multiline = true;
             this.TxtAltoEmpaque.Name = "TxtAltoEmpaque";
             this.TxtAltoEmpaque.Size = new System.Drawing.Size(127, 28);
             this.TxtAltoEmpaque.TabIndex = 18;
+            this.TxtAltoEmpaque.TextChanged += new System.EventHandler(this.TxtAltoEmpaque_TextChanged);
             // 
             // TxtPesoEmpaque
             // 
-            this.TxtPesoEmpaque.Location = new System.Drawing.Point(683, 179);
+            this.TxtPesoEmpaque.Location = new System.Drawing.Point(683, 221);
             this.TxtPesoEmpaque.Multiline = true;
             this.TxtPesoEmpaque.Name = "TxtPesoEmpaque";
             this.TxtPesoEmpaque.Size = new System.Drawing.Size(127, 28);
             this.TxtPesoEmpaque.TabIndex = 19;
+            this.TxtPesoEmpaque.TextChanged += new System.EventHandler(this.TxtPesoEmpaque_TextChanged);
             // 
             // LabelPesoEmpaqXPesoProdEmpaqPri
             // 
             this.LabelPesoEmpaqXPesoProdEmpaqPri.AutoSize = true;
             this.LabelPesoEmpaqXPesoProdEmpaqPri.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelPesoEmpaqXPesoProdEmpaqPri.Location = new System.Drawing.Point(621, 351);
+            this.LabelPesoEmpaqXPesoProdEmpaqPri.Location = new System.Drawing.Point(671, 368);
             this.LabelPesoEmpaqXPesoProdEmpaqPri.Name = "LabelPesoEmpaqXPesoProdEmpaqPri";
             this.LabelPesoEmpaqXPesoProdEmpaqPri.Size = new System.Drawing.Size(17, 20);
             this.LabelPesoEmpaqXPesoProdEmpaqPri.TabIndex = 21;
             this.LabelPesoEmpaqXPesoProdEmpaqPri.Text = "0";
+            this.LabelPesoEmpaqXPesoProdEmpaqPri.Click += new System.EventHandler(this.LabelPesoEmpaqXPesoProdEmpaqPri_Click);
             // 
             // LabelPrecioPrdXCantProEmpaqPri
             // 
             this.LabelPrecioPrdXCantProEmpaqPri.AutoSize = true;
             this.LabelPrecioPrdXCantProEmpaqPri.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelPrecioPrdXCantProEmpaqPri.Location = new System.Drawing.Point(621, 301);
+            this.LabelPrecioPrdXCantProEmpaqPri.Location = new System.Drawing.Point(671, 318);
             this.LabelPrecioPrdXCantProEmpaqPri.Name = "LabelPrecioPrdXCantProEmpaqPri";
             this.LabelPrecioPrdXCantProEmpaqPri.Size = new System.Drawing.Size(17, 20);
             this.LabelPrecioPrdXCantProEmpaqPri.TabIndex = 22;
             this.LabelPrecioPrdXCantProEmpaqPri.Text = "0";
+            this.LabelPrecioPrdXCantProEmpaqPri.Click += new System.EventHandler(this.LabelPrecioPrdXCantProEmpaqPri_Click);
             // 
             // TxtCantProdEmpaqP
             // 
-            this.TxtCantProdEmpaqP.Location = new System.Drawing.Point(683, 230);
+            this.TxtCantProdEmpaqP.Location = new System.Drawing.Point(683, 272);
             this.TxtCantProdEmpaqP.Multiline = true;
             this.TxtCantProdEmpaqP.Name = "TxtCantProdEmpaqP";
             this.TxtCantProdEmpaqP.Size = new System.Drawing.Size(127, 28);
             this.TxtCantProdEmpaqP.TabIndex = 23;
+            this.TxtCantProdEmpaqP.TextChanged += new System.EventHandler(this.TxtCantProdEmpaqP_TextChanged);
+            this.TxtCantProdEmpaqP.Leave += new System.EventHandler(this.TxtCantProdEmpaqP_Leave);
             // 
             // BtnRegistrarEmpaque
             // 
@@ -282,6 +295,7 @@ namespace Presentación_GUI
             this.BtnRegistrarEmpaque.TabIndex = 24;
             this.BtnRegistrarEmpaque.Text = "Registrar";
             this.BtnRegistrarEmpaque.UseVisualStyleBackColor = false;
+            this.BtnRegistrarEmpaque.Click += new System.EventHandler(this.BtnRegistrarEmpaque_Click);
             // 
             // panel2
             // 
@@ -389,16 +403,39 @@ namespace Presentación_GUI
             // CmbProductos
             // 
             this.CmbProductos.FormattingEnabled = true;
-            this.CmbProductos.Location = new System.Drawing.Point(683, 38);
+            this.CmbProductos.Location = new System.Drawing.Point(683, 29);
             this.CmbProductos.Name = "CmbProductos";
             this.CmbProductos.Size = new System.Drawing.Size(127, 24);
             this.CmbProductos.TabIndex = 35;
+            this.CmbProductos.SelectedIndexChanged += new System.EventHandler(this.CmbProductos_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(544, 76);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(113, 20);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "Ref. Producto:";
+            this.label13.Visible = false;
+            // 
+            // TxtRefProducto
+            // 
+            this.TxtRefProducto.Location = new System.Drawing.Point(683, 76);
+            this.TxtRefProducto.Multiline = true;
+            this.TxtRefProducto.Name = "TxtRefProducto";
+            this.TxtRefProducto.Size = new System.Drawing.Size(127, 28);
+            this.TxtRefProducto.TabIndex = 37;
+            this.TxtRefProducto.Visible = false;
             // 
             // FrmGestionarEmpaque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 833);
+            this.Controls.Add(this.TxtRefProducto);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.CmbProductos);
             this.Controls.Add(this.dataGridViewConsultaEmpaque);
             this.Controls.Add(this.BtnConsultarEmpaque);
@@ -479,5 +516,7 @@ namespace Presentación_GUI
         private System.Windows.Forms.Button BtnConsultarEmpaque;
         private System.Windows.Forms.DataGridView dataGridViewConsultaEmpaque;
         private System.Windows.Forms.ComboBox CmbProductos;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox TxtRefProducto;
     }
 }

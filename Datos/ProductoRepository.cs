@@ -108,5 +108,24 @@ namespace Datos
 
             return productos;
         }
+        public List<Producto> ConsultarTodosProductosRep()
+        {
+            List<Producto> productos = new List<Producto>();
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "select * from Producto";
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Producto producto = new Producto();
+                    
+                    producto.NombreProducto = reader.GetString(1);
+                    
+                }
+                reader.Close();
+            }
+
+            return productos;
+        }
     }
 }

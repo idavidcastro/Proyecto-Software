@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace Presentación_GUI
         public FrmGestionarEmbalaje()
         {
             InitializeComponent();
+        }
+
+        private void FrmGestionarEmbalaje_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnRegistrarEmbalaje_Click(object sender, EventArgs e)
+        {
+            Empaque empaque = new Empaque();
+            empaque.Producto. = ;
         }
     }
 }

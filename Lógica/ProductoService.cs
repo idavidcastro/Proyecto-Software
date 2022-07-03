@@ -142,8 +142,25 @@ namespace Lógica
 
         }
 
+        public List<Producto> ConsultarTodosLosProductos()
+        {
+            List<Producto> productos = new List<Producto>();
 
+            try
+            {
+                connectionManager.Open();
+                productos = productoRepository.ConsultarTodosProductosRep();
+            }
+            catch (Exception exception)
+            {
 
+            }
+            finally
+            {
+                connectionManager.Close();
+            }
+            return productos;
+        }
     }
 
     public class ConsultaReponseProducto
