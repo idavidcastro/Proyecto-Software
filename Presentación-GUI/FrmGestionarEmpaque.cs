@@ -46,7 +46,7 @@ namespace Presentación_GUI
 
             total2 =  pesoProducto*cantProd+pesoEmpaque;
 
-            LabelPesoEmpaqXPesoProdEmpaqPri.Text = total2.ToString();
+            LabelPesoEmpaqXPesoProdEmpaqPri.Text = total2.ToString(); 
 
         }
         private void MostrarProductos()
