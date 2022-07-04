@@ -79,10 +79,6 @@ namespace Presentación_GUI
             // CmbReferenciaConsultaProducto
             // 
             this.CmbReferenciaConsultaProducto.FormattingEnabled = true;
-            this.CmbReferenciaConsultaProducto.Items.AddRange(new object[] {
-            "PD01",
-            "PD02",
-            "PD05"});
             this.CmbReferenciaConsultaProducto.Location = new System.Drawing.Point(463, 543);
             this.CmbReferenciaConsultaProducto.Name = "CmbReferenciaConsultaProducto";
             this.CmbReferenciaConsultaProducto.Size = new System.Drawing.Size(106, 24);
@@ -101,10 +97,6 @@ namespace Presentación_GUI
             // CmbReferenciaProducto
             // 
             this.CmbReferenciaProducto.FormattingEnabled = true;
-            this.CmbReferenciaProducto.Items.AddRange(new object[] {
-            "PD01",
-            "PD02",
-            "PD03"});
             this.CmbReferenciaProducto.Location = new System.Drawing.Point(1036, 92);
             this.CmbReferenciaProducto.Name = "CmbReferenciaProducto";
             this.CmbReferenciaProducto.Size = new System.Drawing.Size(106, 24);
