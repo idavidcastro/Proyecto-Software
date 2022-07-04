@@ -118,7 +118,7 @@ namespace Presentación_GUI
 
             empaque.PrecioProdxCantProd = decimal.Parse(LabelPrecioPrdXCantProEmpaqPri.Text);
             empaque.PesoEmpaquexPesoProducto = decimal.Parse(LabelPesoEmpaqXPesoProdEmpaqPri.Text);
-            Calculos();
+            
             string mensaje = empaqueService.GuardarEmpaque(empaque);
             MessageBox.Show(mensaje, "Guardar empaque", MessageBoxButtons.OK, MessageBoxIcon.Information);
             

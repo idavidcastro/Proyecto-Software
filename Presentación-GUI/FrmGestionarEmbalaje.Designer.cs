@@ -70,6 +70,10 @@ namespace Presentación_GUI
             this.TxtCantProd = new System.Windows.Forms.TextBox();
             this.TxtPrecioProdX = new System.Windows.Forms.TextBox();
             this.TxtPesoEmpaqueX = new System.Windows.Forms.TextBox();
+            this.TxtRefProd = new System.Windows.Forms.TextBox();
+            this.TxtNombProd = new System.Windows.Forms.TextBox();
+            this.TxtPesoProd = new System.Windows.Forms.TextBox();
+            this.TxtPrecioProd = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsultaEmbalaje)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,6 +210,8 @@ namespace Presentación_GUI
             this.TxtAltoEmbalaje.Name = "TxtAltoEmbalaje";
             this.TxtAltoEmbalaje.Size = new System.Drawing.Size(127, 28);
             this.TxtAltoEmbalaje.TabIndex = 51;
+            this.TxtAltoEmbalaje.TextChanged += new System.EventHandler(this.TxtAltoEmbalaje_TextChanged);
+            this.TxtAltoEmbalaje.Leave += new System.EventHandler(this.TxtAltoEmbalaje_Leave);
             // 
             // TxtAnchoEmbalaje
             // 
@@ -356,6 +362,7 @@ namespace Presentación_GUI
             this.CmbRefEmpaqueEnEmbalaje.Name = "CmbRefEmpaqueEnEmbalaje";
             this.CmbRefEmpaqueEnEmbalaje.Size = new System.Drawing.Size(106, 24);
             this.CmbRefEmpaqueEnEmbalaje.TabIndex = 76;
+            this.CmbRefEmpaqueEnEmbalaje.SelectedIndexChanged += new System.EventHandler(this.CmbRefEmpaqueEnEmbalaje_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -466,11 +473,51 @@ namespace Presentación_GUI
             this.TxtPesoEmpaqueX.TabIndex = 87;
             this.TxtPesoEmpaqueX.Visible = false;
             // 
+            // TxtRefProd
+            // 
+            this.TxtRefProd.Location = new System.Drawing.Point(821, 408);
+            this.TxtRefProd.Multiline = true;
+            this.TxtRefProd.Name = "TxtRefProd";
+            this.TxtRefProd.Size = new System.Drawing.Size(23, 43);
+            this.TxtRefProd.TabIndex = 88;
+            this.TxtRefProd.Visible = false;
+            // 
+            // TxtNombProd
+            // 
+            this.TxtNombProd.Location = new System.Drawing.Point(821, 408);
+            this.TxtNombProd.Multiline = true;
+            this.TxtNombProd.Name = "TxtNombProd";
+            this.TxtNombProd.Size = new System.Drawing.Size(23, 43);
+            this.TxtNombProd.TabIndex = 89;
+            this.TxtNombProd.Visible = false;
+            // 
+            // TxtPesoProd
+            // 
+            this.TxtPesoProd.Location = new System.Drawing.Point(821, 408);
+            this.TxtPesoProd.Multiline = true;
+            this.TxtPesoProd.Name = "TxtPesoProd";
+            this.TxtPesoProd.Size = new System.Drawing.Size(23, 43);
+            this.TxtPesoProd.TabIndex = 90;
+            this.TxtPesoProd.Visible = false;
+            // 
+            // TxtPrecioProd
+            // 
+            this.TxtPrecioProd.Location = new System.Drawing.Point(821, 408);
+            this.TxtPrecioProd.Multiline = true;
+            this.TxtPrecioProd.Name = "TxtPrecioProd";
+            this.TxtPrecioProd.Size = new System.Drawing.Size(23, 43);
+            this.TxtPrecioProd.TabIndex = 91;
+            this.TxtPrecioProd.Visible = false;
+            // 
             // FrmGestionarEmbalaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 833);
+            this.Controls.Add(this.TxtPrecioProd);
+            this.Controls.Add(this.TxtPesoProd);
+            this.Controls.Add(this.TxtNombProd);
+            this.Controls.Add(this.TxtRefProd);
             this.Controls.Add(this.TxtPesoEmpaqueX);
             this.Controls.Add(this.TxtPrecioProdX);
             this.Controls.Add(this.TxtCantProd);
@@ -564,5 +611,9 @@ namespace Presentación_GUI
         private System.Windows.Forms.TextBox TxtCantProd;
         private System.Windows.Forms.TextBox TxtPrecioProdX;
         private System.Windows.Forms.TextBox TxtPesoEmpaqueX;
+        private System.Windows.Forms.TextBox TxtRefProd;
+        private System.Windows.Forms.TextBox TxtNombProd;
+        private System.Windows.Forms.TextBox TxtPesoProd;
+        private System.Windows.Forms.TextBox TxtPrecioProd;
     }
 }
