@@ -59,6 +59,8 @@ namespace Presentación_GUI
             this.label5 = new System.Windows.Forms.Label();
             this.LabelTotalEmbalEnContenedor = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsultaContenedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@ namespace Presentación_GUI
             // 
             this.LabelEstibadoXLargo.AutoSize = true;
             this.LabelEstibadoXLargo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelEstibadoXLargo.Location = new System.Drawing.Point(746, 180);
+            this.LabelEstibadoXLargo.Location = new System.Drawing.Point(750, 141);
             this.LabelEstibadoXLargo.Name = "LabelEstibadoXLargo";
             this.LabelEstibadoXLargo.Size = new System.Drawing.Size(17, 20);
             this.LabelEstibadoXLargo.TabIndex = 130;
@@ -76,7 +78,7 @@ namespace Presentación_GUI
             // 
             this.LabelEstibadoXAncho.AutoSize = true;
             this.LabelEstibadoXAncho.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelEstibadoXAncho.Location = new System.Drawing.Point(746, 223);
+            this.LabelEstibadoXAncho.Location = new System.Drawing.Point(750, 184);
             this.LabelEstibadoXAncho.Name = "LabelEstibadoXAncho";
             this.LabelEstibadoXAncho.Size = new System.Drawing.Size(17, 20);
             this.LabelEstibadoXAncho.TabIndex = 129;
@@ -86,7 +88,7 @@ namespace Presentación_GUI
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(548, 223);
+            this.label13.Location = new System.Drawing.Point(552, 184);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(141, 20);
             this.label13.TabIndex = 127;
@@ -235,7 +237,7 @@ namespace Presentación_GUI
             // 
             // TxtRefContenedor
             // 
-            this.TxtRefContenedor.Location = new System.Drawing.Point(293, 59);
+            this.TxtRefContenedor.Location = new System.Drawing.Point(293, 42);
             this.TxtRefContenedor.Multiline = true;
             this.TxtRefContenedor.Name = "TxtRefContenedor";
             this.TxtRefContenedor.Size = new System.Drawing.Size(127, 28);
@@ -255,7 +257,7 @@ namespace Presentación_GUI
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(555, 180);
+            this.label7.Location = new System.Drawing.Point(559, 141);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 20);
             this.label7.TabIndex = 108;
@@ -285,7 +287,7 @@ namespace Presentación_GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(67, 63);
+            this.label1.Location = new System.Drawing.Point(67, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 20);
             this.label1.TabIndex = 104;
@@ -303,7 +305,7 @@ namespace Presentación_GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(454, 63);
+            this.label2.Location = new System.Drawing.Point(192, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 20);
             this.label2.TabIndex = 131;
@@ -315,9 +317,9 @@ namespace Presentación_GUI
             this.CmbTipoContenedor.Items.AddRange(new object[] {
             "Terrestre (40 pies)",
             "Aereo"});
-            this.CmbTipoContenedor.Location = new System.Drawing.Point(629, 63);
+            this.CmbTipoContenedor.Location = new System.Drawing.Point(367, 103);
             this.CmbTipoContenedor.Name = "CmbTipoContenedor";
-            this.CmbTipoContenedor.Size = new System.Drawing.Size(171, 24);
+            this.CmbTipoContenedor.Size = new System.Drawing.Size(127, 24);
             this.CmbTipoContenedor.TabIndex = 132;
             // 
             // TxtNumEstibasXProducto
@@ -358,11 +360,34 @@ namespace Presentación_GUI
             this.label8.TabIndex = 135;
             this.label8.Text = "Total Embalajes en Conetendor:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(507, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 20);
+            this.label6.TabIndex = 137;
+            this.label6.Text = "Ref. Estibado:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Terrestre (40 pies)",
+            "Aereo"});
+            this.comboBox1.Location = new System.Drawing.Point(636, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(127, 24);
+            this.comboBox1.TabIndex = 138;
+            // 
             // FrmGestionarContenedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 833);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.LabelTotalEmbalEnContenedor);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TxtNumEstibasXProducto);
@@ -434,5 +459,7 @@ namespace Presentación_GUI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label LabelTotalEmbalEnContenedor;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -40,6 +40,7 @@ namespace Presentación_GUI
         }
         private void Calculos()
         {
+            
             decimal vlr1, vlr2, vlr3, vlr4, vlr5, vlr6, total1, total2, total3, totaltotal;
 
             vlr1 = decimal.Parse(TxtLargo.Text);
@@ -50,10 +51,10 @@ namespace Presentación_GUI
             vlr5 = decimal.Parse(TxtAnchoEmbalaje.Text);
             vlr6 = decimal.Parse(TxtAltoEmbalaje.Text);
 
-            total1 = vlr1 * vlr4;
-            total2 = vlr2 * vlr5;
-            total3 = vlr3 * vlr6;
-
+            total1 = vlr4/vlr1;
+            total2 = vlr5/vlr2;
+            total3 = vlr6/vlr3;
+            
             totaltotal = total1 * total2 * total3;
 
             LabelProductoXLargo.Text = total1.ToString();
