@@ -51,12 +51,11 @@ namespace Datos
                 {
                     while (reader.Read())
                     {
+                        /*
                         Embalaje embalaje = new Embalaje();
                         embalaje.RefEmbalaje = reader.GetString(0);
-
-                        embalaje.RefEmpaque = reader.GetString(0);
-                        embalaje.Producto = new Producto();
-                        embalaje.Producto.RefProducto = reader.GetString(1);
+                        embalaje.Empaque = new Empaque();
+                        embalaje.Empaque.RefProducto = reader.GetString(1);
                         embalaje.Producto.NombreProducto = reader.GetString(2);
                         embalaje.Producto.PesoProducto = decimal.Parse(reader.GetString(3));
                         embalaje.Producto.PrecioProducto = decimal.Parse(reader.GetString(4));
@@ -69,6 +68,7 @@ namespace Datos
                         empaque.PesoEmpaquexPesoProducto = decimal.Parse(reader.GetString(11));
 
                         return empaque;
+                        */
                     }
                 }
                 reader.Close();
@@ -85,8 +85,8 @@ namespace Datos
                 command.ExecuteNonQuery();
             }
         }
-
-        public void ModificarEmbalaje(Empaque empaqueNuevo, string refempaque)
+        /*
+        public void ModificarEmbalaje(Embalaje embalajeNuevo, string refembalaje)
         {
             using (var command = _connection.CreateCommand())
             {
@@ -109,7 +109,7 @@ namespace Datos
                 command.ExecuteNonQuery();
             }
         }
-
+        */
         public List<Empaque> ConsultarTodosLosEmpaques(string refempaque)
         {
             List<Empaque> empaques = new List<Empaque>();

@@ -34,7 +34,7 @@ namespace Presentación_GUI
 ;
             while (reader.Read())
             {
-                CmbRefEmpaqueEnEmbalaje.Items.Add(reader.GetString(1));
+                CmbRefEmpaqueEnEmbalaje.Items.Add(reader.GetString(0));
             }
             cn.Close();
         }
@@ -65,7 +65,7 @@ namespace Presentación_GUI
 
         private void FrmGestionarEmbalaje_Load(object sender, EventArgs e)
         {
-            BtnRegistrarEmbalaje.Enabled = false;
+            //BtnRegistrarEmbalaje.Enabled = false;
         }
 
         private void BtnRegistrarEmbalaje_Click(object sender, EventArgs e)

@@ -71,32 +71,17 @@ namespace Presentación_GUI
 
         private void TxtPesoProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Handled = true;
-                return;
-            }
+            
         }
 
         private void TxtPrecioProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Solo se permiten números", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Handled = true;
-                return;
-            }
+            
         }
 
         private void TxtNombreProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
+            
         }
 
         private void BtnConsultarProducto_Click(object sender, EventArgs e)

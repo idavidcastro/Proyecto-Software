@@ -33,7 +33,7 @@ namespace Presentación_GUI
 
         private void Calculos()
         {
-            decimal precio, cantprod, total1, pesoEmpaque, pesoProducto, total2;
+            decimal precio, cantprod, total1, pesoEmpaque, pesoProducto, cantProd, total2;
             precio = decimal.Parse(TxtPrecioProducto.Text);
             cantprod = decimal.Parse(TxtCantProdEmpaqP.Text);
             total1 = precio * cantprod;
@@ -42,10 +42,11 @@ namespace Presentación_GUI
 
             pesoEmpaque = decimal.Parse(TxtPesoEmpaque.Text);
             pesoProducto = decimal.Parse(TxtPesoProducto.Text);
-            total2 = pesoEmpaque * pesoProducto;
+            cantProd = int.Parse(TxtCantProdEmpaqP.Text);
+
+            total2 =  pesoProducto*cantProd+pesoEmpaque;
 
             LabelPesoEmpaqXPesoProdEmpaqPri.Text = total2.ToString();
-
 
         }
         private void MostrarProductos()

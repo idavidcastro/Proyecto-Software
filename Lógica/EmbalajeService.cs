@@ -69,7 +69,7 @@ namespace Lógica
                 connectionManager.Close();
             }
         }
-
+        /*
         public string ModificarEmbalaje(Embalaje embalajeNuevo, string refembalaje)
         {
 
@@ -94,7 +94,7 @@ namespace Lógica
                 connectionManager.Close();
             }
         }
-
+        
         public ConsultaReponseEmbalaje ConsultarListEmbalaje(string refempaque)
         {
             try
@@ -112,7 +112,7 @@ namespace Lógica
                 connectionManager.Close();
             }
         }
-
+        */
         public BusquedaReponseEmbalaje BuscarEmbalaje(string refembalaje)
         {
             try
