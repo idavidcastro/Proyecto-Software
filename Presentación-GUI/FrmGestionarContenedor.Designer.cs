@@ -208,6 +208,7 @@ namespace Presentación_GUI
             this.BtnRegistrarContenedor.TabIndex = 115;
             this.BtnRegistrarContenedor.Text = "Registrar";
             this.BtnRegistrarContenedor.UseVisualStyleBackColor = false;
+            this.BtnRegistrarContenedor.Click += new System.EventHandler(this.BtnRegistrarContenedor_Click);
             // 
             // LabelTotalEstibasXContenedor
             // 

@@ -29,5 +29,7 @@ select *from Empaque;
 
 select *from Embalaje;
 
+select *from Estibado;
+
 
 delete from Empaque where RefEmpaque ='EMP01';

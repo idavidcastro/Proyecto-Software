@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    class Contenedor
+    public class Contenedor
     {
+        public string RefContenedor { get; set; }
+        public Estibado Estibado { get; set; }
+        public string TipoContenedor { get; set; }
+        public decimal LargoContenedor { get; set; }
+        public decimal AnchoContenedor { get; set; }
+        public decimal EstibadoXLargo { get; set; }
+        public decimal EstibadoXAncho { get; set; }
+        public  int NumEstibasXProducto { get; set; }
+        public int TotalEmbalajesEnContenedor { get; set; }
     }
 }

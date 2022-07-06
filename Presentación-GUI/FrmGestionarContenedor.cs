@@ -16,5 +16,10 @@ namespace Presentación_GUI
         {
             InitializeComponent();
         }
+
+        private void BtnRegistrarContenedor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
