@@ -49,8 +49,8 @@ namespace Datos
                         Producto producto = new Producto();
                         producto.RefProducto = reader.GetString(0);
                         producto.NombreProducto = reader.GetString(1);
-                        producto.PesoProducto = decimal.Parse(reader.GetString(2));
-                        producto.PrecioProducto = decimal.Parse(reader.GetString(2));
+                        producto.PesoProducto = double.Parse(reader.GetString(2));
+                        producto.PrecioProducto = double.Parse(reader.GetString(3));
                         
                         return producto;
                     }
@@ -98,8 +98,8 @@ namespace Datos
                     Producto producto = new Producto();
                     producto.RefProducto = reader.GetString(0);
                     producto.NombreProducto = reader.GetString(1);                 
-                    producto.PesoProducto = decimal.Parse(reader.GetString(2));
-                    producto.PrecioProducto = decimal.Parse(reader.GetString(3));
+                    producto.PesoProducto = double.Parse(reader.GetString(2));
+                    producto.PrecioProducto = double.Parse(reader.GetString(3));
 
                     productos.Add(producto);
                 }

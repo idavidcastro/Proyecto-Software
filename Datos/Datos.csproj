@@ -45,9 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionManager.cs" />
+    <Compile Include="ContenedorRepository.cs" />
     <Compile Include="EmbalajeRepository.cs" />
     <Compile Include="EmpaqueRepository.cs" />
     <Compile Include="EstibadoRepository.cs" />
+    <Compile Include="OrdenRepository.cs" />
     <Compile Include="ProductoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

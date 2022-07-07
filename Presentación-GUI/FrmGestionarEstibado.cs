@@ -59,13 +59,11 @@ namespace Presentación_GUI
             totaltotal = total1 * total2 * total3;
 
 
-            LabelEmbalajeXLargo.Text = total1.ToString();
-            LabelEmbalajeXAncho.Text = total2.ToString();
+            LabelEmbalajeXLargo.Text = ((int)total1).ToString();
+            LabelEmbalajeXAncho.Text = ((int)total2).ToString();
             LabelEmbalajeXAlto.Text = ((int)total3).ToString();
 
             LabelTotalEmbalajesXEstibas.Text = ((int)totaltotal).ToString();
-
-            MessageBox.Show($"{vlr1} + {vlr2}+{vlr3} + {vlr4}+{vlr5} + {vlr6}");
         }
 
         private void BtnRegistrarEstibado_Click(object sender, EventArgs e)
@@ -73,8 +71,8 @@ namespace Presentación_GUI
             producto = new Producto();
             producto.RefProducto = TxtRefProducto.Text;
             producto.NombreProducto = TxtNombProd.Text;
-            producto.PesoProducto = decimal.Parse(TxtPesoProd.Text);
-            producto.PrecioProducto = decimal.Parse(TxtPrecioProd.Text);
+            producto.PesoProducto = double.Parse(TxtPesoProd.Text);
+            producto.PrecioProducto = double.Parse(TxtPrecioProd.Text);
 
             empaque = new Empaque();
             empaque.RefEmpaque = TxtEmpaqueEnEmbalaje.Text;

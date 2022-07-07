@@ -10,8 +10,8 @@ namespace Entidad
     {
         public string RefProducto { get; set; }
         public string NombreProducto { get; set; }
-        public decimal PesoProducto { get; set; }
-        public decimal PrecioProducto { get; set; }
+        public double PesoProducto { get; set; }
+        public double PrecioProducto { get; set; }
         
     }
 }

@@ -122,8 +122,8 @@ namespace Datos
                     empaque.Producto = new Producto();
                     empaque.Producto.RefProducto = reader.GetString(1);
                     empaque.Producto.NombreProducto = reader.GetString(2);
-                    empaque.Producto.PesoProducto = decimal.Parse(reader.GetString(3));
-                    empaque.Producto.PrecioProducto = decimal.Parse(reader.GetString(4));
+                    empaque.Producto.PesoProducto = double.Parse(reader.GetString(3));
+                    empaque.Producto.PrecioProducto = double.Parse(reader.GetString(4));
                     empaque.Largo = decimal.Parse(reader.GetString(5));
                     empaque.Ancho = decimal.Parse(reader.GetString(6));
                     empaque.Alto = decimal.Parse(reader.GetString(7));

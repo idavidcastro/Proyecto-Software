@@ -38,7 +38,7 @@ namespace Presentación_GUI
             cantprod = decimal.Parse(TxtCantProdEmpaqP.Text);
             total1 = precio * cantprod;
 
-            LabelPrecioPrdXCantProEmpaqPri.Text = total1.ToString();
+            LabelPrecioPrdXCantProEmpaqPri.Text = ((int)total1).ToString();
 
             pesoEmpaque = decimal.Parse(TxtPesoEmpaque.Text);
             pesoProducto = decimal.Parse(TxtPesoProducto.Text);
@@ -46,7 +46,7 @@ namespace Presentación_GUI
 
             total2 =  pesoProducto*cantProd+pesoEmpaque;
 
-            LabelPesoEmpaqXPesoProdEmpaqPri.Text = total2.ToString(); 
+            LabelPesoEmpaqXPesoProdEmpaqPri.Text = ((int)total2).ToString(); 
 
         }
         private void MostrarProductos()
@@ -105,8 +105,8 @@ namespace Presentación_GUI
 
             producto.RefProducto = TxtRefProducto.Text;
             producto.NombreProducto = CmbProductos.Text;
-            producto.PesoProducto = decimal.Parse(TxtPesoProducto.Text);
-            producto.PrecioProducto = decimal.Parse(TxtPrecioProducto.Text);
+            producto.PesoProducto = double.Parse(TxtPesoProducto.Text);
+            producto.PrecioProducto = double.Parse(TxtPrecioProducto.Text);
 
 
             empaque.RefEmpaque = TxtRefEmpaque.Text;
@@ -140,8 +140,7 @@ namespace Presentación_GUI
             {
                 TxtRefProducto.Text = reader["RefProducto"].ToString();
                 TxtPesoProducto.Text = reader["Peso"].ToString();
-                TxtPrecioProducto.Text = reader["Precio"].ToString();
-                
+                TxtPrecioProducto.Text = reader["Precio"].ToString();               
             }
             cn.Close();
             ValidarCampos();

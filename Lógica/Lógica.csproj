@@ -44,9 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContenedorService.cs" />
     <Compile Include="EmbalajeService.cs" />
     <Compile Include="EmpaqueService.cs" />
     <Compile Include="EstibadoService.cs" />
+    <Compile Include="OrdenService.cs" />
     <Compile Include="ProductoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

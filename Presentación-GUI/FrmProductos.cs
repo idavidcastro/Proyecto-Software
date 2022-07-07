@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,22 @@ namespace Presentación_GUI
         {
             InitializeComponent();
             productoService = new ProductoService(ConfigConnectionString.Cadena);
+            MostrarProductos();
         }
-
+        private void MostrarProductos()
+        {
+            SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
+            SqlCommand cm = new SqlCommand("select *from Producto", cn);
+            cn.Open();
+            SqlDataReader reader = cm.ExecuteReader()
+;
+            while (reader.Read())
+            {
+                CmbReferenciaProducto.Items.Add(reader.GetString(0));
+                CmbReferenciaConsultaProducto.Items.Add(reader.GetString(0));
+            }
+            cn.Close();
+        }
         private void FrmProductos_Load(object sender, EventArgs e)
         {
             BtnRegistrarProducto.Enabled = false;
@@ -62,8 +77,8 @@ namespace Presentación_GUI
 
             producto.RefProducto = TxtRefProducto.Text;
             producto.NombreProducto = TxtNombreProducto.Text;
-            producto.PesoProducto = decimal.Parse(TxtPesoProducto.Text);
-            producto.PrecioProducto = decimal.Parse(TxtPrecioProducto.Text);         
+            producto.PesoProducto = double.Parse(TxtPesoProducto.Text);
+            producto.PrecioProducto = double.Parse(TxtPrecioProducto.Text);         
 
             string mensaje = productoService.GuardarProducto(producto);
             MessageBox.Show(mensaje, "Guardar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,6 +118,7 @@ namespace Presentación_GUI
 
         private void BtnEditarProducto_Click(object sender, EventArgs e)
         {
+            /*
             BusquedaReponse respuesta;
 
             respuesta = productoService.BuscarProducto(CmbReferenciaProducto.Text);
@@ -119,6 +135,22 @@ namespace Presentación_GUI
                 TxtPrecioProducto.Text = respuesta.Producto.PrecioProducto.ToString();
 
             }
+            */
+            SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
+            cn.Open();
+            SqlCommand cm = new SqlCommand("select * from Producto where RefProducto= '" + CmbReferenciaProducto.Text + "'", cn);
+            SqlDataReader reader = cm.ExecuteReader();
+            if (reader.Read() == true)
+            {
+
+                TxtRefProducto.Text = reader["RefProducto"].ToString();
+                TxtNombreProducto.Text = reader["Nombre"].ToString();
+                TxtPesoProducto.Text = reader["Peso"].ToString();
+                TxtPrecioProducto.Text = reader["Precio"].ToString();
+
+            }
+            cn.Close();
+            ValidarCampos();
 
         }
 
@@ -128,8 +160,8 @@ namespace Presentación_GUI
 
             producto.RefProducto = TxtRefProducto.Text;
             producto.NombreProducto = TxtNombreProducto.Text;
-            producto.PesoProducto = decimal.Parse(TxtPesoProducto.Text);
-            producto.PrecioProducto = decimal.Parse(TxtPrecioProducto.Text);
+            producto.PesoProducto = double.Parse(TxtPesoProducto.Text);
+            producto.PrecioProducto = double.Parse(TxtPrecioProducto.Text);
 
             string mensaje = productoService.ModificarProducto(producto, CmbReferenciaProducto.Text);
             MessageBox.Show(mensaje, "Modificar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);

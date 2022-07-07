@@ -65,10 +65,12 @@ namespace Presentación_GUI
 
         private void BtnVolverGestiones_Click(object sender, EventArgs e)
         {
-            DialogResult resul = MessageBox.Show("¿Está seguro que quiere cerrar la aplicación?", "Cerrar", MessageBoxButtons.YesNo);
+            DialogResult resul = MessageBox.Show("¿Está seguro que quiere volver al panel de gestiones?", "Cerrar", MessageBoxButtons.YesNo);
             if (resul == DialogResult.Yes)
             {
-                Application.Exit();
+                FrmOrden frmOrden = new FrmOrden();
+                frmOrden.Show();
+                Hide();
             }
         }
     }

@@ -60,7 +60,38 @@ namespace Presentación_GUI
             this.LabelTotalEmbalEnContenedor = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CmbRefEstibadoEnContenedor = new System.Windows.Forms.ComboBox();
+            this.TxtProductoXLargo = new System.Windows.Forms.TextBox();
+            this.TxtProductoXAncho = new System.Windows.Forms.TextBox();
+            this.TxtProductoXAlto = new System.Windows.Forms.TextBox();
+            this.TxtTotalEmpPrimXEmbalaje = new System.Windows.Forms.TextBox();
+            this.TxtAltoEmbalaje = new System.Windows.Forms.TextBox();
+            this.TxtAnchoEmbalaje = new System.Windows.Forms.TextBox();
+            this.TxtLargoEmbalaje = new System.Windows.Forms.TextBox();
+            this.TxtPesoEmpaqueX = new System.Windows.Forms.TextBox();
+            this.TxtPrecioProdX = new System.Windows.Forms.TextBox();
+            this.TxtCantProd = new System.Windows.Forms.TextBox();
+            this.TxtPesoEmpaque = new System.Windows.Forms.TextBox();
+            this.TxtAlto = new System.Windows.Forms.TextBox();
+            this.TxtAncho = new System.Windows.Forms.TextBox();
+            this.TxtLargo = new System.Windows.Forms.TextBox();
+            this.TxtEmpaqueEnEmbalaje = new System.Windows.Forms.TextBox();
+            this.TxtPrecioProd = new System.Windows.Forms.TextBox();
+            this.TxtPesoProd = new System.Windows.Forms.TextBox();
+            this.TxtNombProd = new System.Windows.Forms.TextBox();
+            this.TxtRefProducto = new System.Windows.Forms.TextBox();
+            this.TxtRefEmbalajeEnEstibado = new System.Windows.Forms.TextBox();
+            this.LabelEmbalajeXAlto = new System.Windows.Forms.TextBox();
+            this.LabelEmbalajeXAncho = new System.Windows.Forms.TextBox();
+            this.LabelEmbalajeXLargo = new System.Windows.Forms.TextBox();
+            this.TxtAltoEstibado = new System.Windows.Forms.TextBox();
+            this.TxtAnchoEstibado = new System.Windows.Forms.TextBox();
+            this.TxtLargoEstibado = new System.Windows.Forms.TextBox();
+            this.LabelTotalEmbalajesXEstibas = new System.Windows.Forms.TextBox();
+            this.TxtTotalEmbalajesXEstibas = new System.Windows.Forms.TextBox();
+            this.TxtEmbalajeXAlto = new System.Windows.Forms.TextBox();
+            this.TxtEmbalajeXAncho = new System.Windows.Forms.TextBox();
+            this.TxtEmbalajeXLargo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsultaContenedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -322,6 +353,7 @@ namespace Presentación_GUI
             this.CmbTipoContenedor.Name = "CmbTipoContenedor";
             this.CmbTipoContenedor.Size = new System.Drawing.Size(127, 24);
             this.CmbTipoContenedor.TabIndex = 132;
+            this.CmbTipoContenedor.SelectedIndexChanged += new System.EventHandler(this.CmbTipoContenedor_SelectedIndexChanged);
             // 
             // TxtNumEstibasXProducto
             // 
@@ -330,6 +362,7 @@ namespace Presentación_GUI
             this.TxtNumEstibasXProducto.Name = "TxtNumEstibasXProducto";
             this.TxtNumEstibasXProducto.Size = new System.Drawing.Size(127, 28);
             this.TxtNumEstibasXProducto.TabIndex = 134;
+            this.TxtNumEstibasXProducto.Leave += new System.EventHandler(this.TxtNumEstibasXProducto_Leave);
             // 
             // label5
             // 
@@ -371,23 +404,331 @@ namespace Presentación_GUI
             this.label6.TabIndex = 137;
             this.label6.Text = "Ref. Estibado:";
             // 
-            // comboBox1
+            // CmbRefEstibadoEnContenedor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Terrestre (40 pies)",
-            "Aereo"});
-            this.comboBox1.Location = new System.Drawing.Point(636, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(127, 24);
-            this.comboBox1.TabIndex = 138;
+            this.CmbRefEstibadoEnContenedor.FormattingEnabled = true;
+            this.CmbRefEstibadoEnContenedor.Location = new System.Drawing.Point(636, 46);
+            this.CmbRefEstibadoEnContenedor.Name = "CmbRefEstibadoEnContenedor";
+            this.CmbRefEstibadoEnContenedor.Size = new System.Drawing.Size(127, 24);
+            this.CmbRefEstibadoEnContenedor.TabIndex = 138;
+            this.CmbRefEstibadoEnContenedor.SelectedIndexChanged += new System.EventHandler(this.CmbRefEstibadoEnContenedor_SelectedIndexChanged);
+            // 
+            // TxtProductoXLargo
+            // 
+            this.TxtProductoXLargo.Location = new System.Drawing.Point(833, 32);
+            this.TxtProductoXLargo.Multiline = true;
+            this.TxtProductoXLargo.Name = "TxtProductoXLargo";
+            this.TxtProductoXLargo.Size = new System.Drawing.Size(24, 38);
+            this.TxtProductoXLargo.TabIndex = 157;
+            this.TxtProductoXLargo.Visible = false;
+            // 
+            // TxtProductoXAncho
+            // 
+            this.TxtProductoXAncho.Location = new System.Drawing.Point(833, 32);
+            this.TxtProductoXAncho.Multiline = true;
+            this.TxtProductoXAncho.Name = "TxtProductoXAncho";
+            this.TxtProductoXAncho.Size = new System.Drawing.Size(24, 38);
+            this.TxtProductoXAncho.TabIndex = 156;
+            this.TxtProductoXAncho.Visible = false;
+            // 
+            // TxtProductoXAlto
+            // 
+            this.TxtProductoXAlto.Location = new System.Drawing.Point(833, 32);
+            this.TxtProductoXAlto.Multiline = true;
+            this.TxtProductoXAlto.Name = "TxtProductoXAlto";
+            this.TxtProductoXAlto.Size = new System.Drawing.Size(24, 38);
+            this.TxtProductoXAlto.TabIndex = 155;
+            this.TxtProductoXAlto.Visible = false;
+            // 
+            // TxtTotalEmpPrimXEmbalaje
+            // 
+            this.TxtTotalEmpPrimXEmbalaje.Location = new System.Drawing.Point(833, 32);
+            this.TxtTotalEmpPrimXEmbalaje.Multiline = true;
+            this.TxtTotalEmpPrimXEmbalaje.Name = "TxtTotalEmpPrimXEmbalaje";
+            this.TxtTotalEmpPrimXEmbalaje.Size = new System.Drawing.Size(24, 38);
+            this.TxtTotalEmpPrimXEmbalaje.TabIndex = 154;
+            this.TxtTotalEmpPrimXEmbalaje.Visible = false;
+            // 
+            // TxtAltoEmbalaje
+            // 
+            this.TxtAltoEmbalaje.Location = new System.Drawing.Point(833, 32);
+            this.TxtAltoEmbalaje.Multiline = true;
+            this.TxtAltoEmbalaje.Name = "TxtAltoEmbalaje";
+            this.TxtAltoEmbalaje.Size = new System.Drawing.Size(24, 38);
+            this.TxtAltoEmbalaje.TabIndex = 153;
+            this.TxtAltoEmbalaje.Visible = false;
+            // 
+            // TxtAnchoEmbalaje
+            // 
+            this.TxtAnchoEmbalaje.Location = new System.Drawing.Point(833, 32);
+            this.TxtAnchoEmbalaje.Multiline = true;
+            this.TxtAnchoEmbalaje.Name = "TxtAnchoEmbalaje";
+            this.TxtAnchoEmbalaje.Size = new System.Drawing.Size(24, 38);
+            this.TxtAnchoEmbalaje.TabIndex = 152;
+            this.TxtAnchoEmbalaje.Visible = false;
+            // 
+            // TxtLargoEmbalaje
+            // 
+            this.TxtLargoEmbalaje.Location = new System.Drawing.Point(833, 32);
+            this.TxtLargoEmbalaje.Multiline = true;
+            this.TxtLargoEmbalaje.Name = "TxtLargoEmbalaje";
+            this.TxtLargoEmbalaje.Size = new System.Drawing.Size(24, 38);
+            this.TxtLargoEmbalaje.TabIndex = 151;
+            this.TxtLargoEmbalaje.Visible = false;
+            // 
+            // TxtPesoEmpaqueX
+            // 
+            this.TxtPesoEmpaqueX.Location = new System.Drawing.Point(833, 32);
+            this.TxtPesoEmpaqueX.Multiline = true;
+            this.TxtPesoEmpaqueX.Name = "TxtPesoEmpaqueX";
+            this.TxtPesoEmpaqueX.Size = new System.Drawing.Size(24, 38);
+            this.TxtPesoEmpaqueX.TabIndex = 150;
+            this.TxtPesoEmpaqueX.Visible = false;
+            // 
+            // TxtPrecioProdX
+            // 
+            this.TxtPrecioProdX.Location = new System.Drawing.Point(833, 32);
+            this.TxtPrecioProdX.Multiline = true;
+            this.TxtPrecioProdX.Name = "TxtPrecioProdX";
+            this.TxtPrecioProdX.Size = new System.Drawing.Size(24, 38);
+            this.TxtPrecioProdX.TabIndex = 149;
+            this.TxtPrecioProdX.Visible = false;
+            // 
+            // TxtCantProd
+            // 
+            this.TxtCantProd.Location = new System.Drawing.Point(833, 32);
+            this.TxtCantProd.Multiline = true;
+            this.TxtCantProd.Name = "TxtCantProd";
+            this.TxtCantProd.Size = new System.Drawing.Size(24, 38);
+            this.TxtCantProd.TabIndex = 148;
+            this.TxtCantProd.Visible = false;
+            // 
+            // TxtPesoEmpaque
+            // 
+            this.TxtPesoEmpaque.Location = new System.Drawing.Point(833, 32);
+            this.TxtPesoEmpaque.Multiline = true;
+            this.TxtPesoEmpaque.Name = "TxtPesoEmpaque";
+            this.TxtPesoEmpaque.Size = new System.Drawing.Size(24, 38);
+            this.TxtPesoEmpaque.TabIndex = 147;
+            this.TxtPesoEmpaque.Visible = false;
+            // 
+            // TxtAlto
+            // 
+            this.TxtAlto.Location = new System.Drawing.Point(833, 32);
+            this.TxtAlto.Multiline = true;
+            this.TxtAlto.Name = "TxtAlto";
+            this.TxtAlto.Size = new System.Drawing.Size(24, 38);
+            this.TxtAlto.TabIndex = 146;
+            this.TxtAlto.Visible = false;
+            // 
+            // TxtAncho
+            // 
+            this.TxtAncho.Location = new System.Drawing.Point(833, 32);
+            this.TxtAncho.Multiline = true;
+            this.TxtAncho.Name = "TxtAncho";
+            this.TxtAncho.Size = new System.Drawing.Size(24, 38);
+            this.TxtAncho.TabIndex = 145;
+            this.TxtAncho.Visible = false;
+            // 
+            // TxtLargo
+            // 
+            this.TxtLargo.Location = new System.Drawing.Point(833, 32);
+            this.TxtLargo.Multiline = true;
+            this.TxtLargo.Name = "TxtLargo";
+            this.TxtLargo.Size = new System.Drawing.Size(24, 38);
+            this.TxtLargo.TabIndex = 144;
+            this.TxtLargo.Visible = false;
+            // 
+            // TxtEmpaqueEnEmbalaje
+            // 
+            this.TxtEmpaqueEnEmbalaje.Location = new System.Drawing.Point(833, 32);
+            this.TxtEmpaqueEnEmbalaje.Multiline = true;
+            this.TxtEmpaqueEnEmbalaje.Name = "TxtEmpaqueEnEmbalaje";
+            this.TxtEmpaqueEnEmbalaje.Size = new System.Drawing.Size(24, 38);
+            this.TxtEmpaqueEnEmbalaje.TabIndex = 143;
+            this.TxtEmpaqueEnEmbalaje.Visible = false;
+            // 
+            // TxtPrecioProd
+            // 
+            this.TxtPrecioProd.Location = new System.Drawing.Point(833, 32);
+            this.TxtPrecioProd.Multiline = true;
+            this.TxtPrecioProd.Name = "TxtPrecioProd";
+            this.TxtPrecioProd.Size = new System.Drawing.Size(24, 38);
+            this.TxtPrecioProd.TabIndex = 142;
+            this.TxtPrecioProd.Visible = false;
+            // 
+            // TxtPesoProd
+            // 
+            this.TxtPesoProd.Location = new System.Drawing.Point(833, 32);
+            this.TxtPesoProd.Multiline = true;
+            this.TxtPesoProd.Name = "TxtPesoProd";
+            this.TxtPesoProd.Size = new System.Drawing.Size(24, 38);
+            this.TxtPesoProd.TabIndex = 141;
+            this.TxtPesoProd.Visible = false;
+            // 
+            // TxtNombProd
+            // 
+            this.TxtNombProd.Location = new System.Drawing.Point(833, 32);
+            this.TxtNombProd.Multiline = true;
+            this.TxtNombProd.Name = "TxtNombProd";
+            this.TxtNombProd.Size = new System.Drawing.Size(24, 38);
+            this.TxtNombProd.TabIndex = 140;
+            this.TxtNombProd.Visible = false;
+            // 
+            // TxtRefProducto
+            // 
+            this.TxtRefProducto.Location = new System.Drawing.Point(833, 32);
+            this.TxtRefProducto.Multiline = true;
+            this.TxtRefProducto.Name = "TxtRefProducto";
+            this.TxtRefProducto.Size = new System.Drawing.Size(24, 38);
+            this.TxtRefProducto.TabIndex = 139;
+            this.TxtRefProducto.Visible = false;
+            // 
+            // TxtRefEmbalajeEnEstibado
+            // 
+            this.TxtRefEmbalajeEnEstibado.Location = new System.Drawing.Point(833, 32);
+            this.TxtRefEmbalajeEnEstibado.Multiline = true;
+            this.TxtRefEmbalajeEnEstibado.Name = "TxtRefEmbalajeEnEstibado";
+            this.TxtRefEmbalajeEnEstibado.Size = new System.Drawing.Size(24, 38);
+            this.TxtRefEmbalajeEnEstibado.TabIndex = 158;
+            this.TxtRefEmbalajeEnEstibado.Visible = false;
+            // 
+            // LabelEmbalajeXAlto
+            // 
+            this.LabelEmbalajeXAlto.Location = new System.Drawing.Point(833, 32);
+            this.LabelEmbalajeXAlto.Multiline = true;
+            this.LabelEmbalajeXAlto.Name = "LabelEmbalajeXAlto";
+            this.LabelEmbalajeXAlto.Size = new System.Drawing.Size(24, 38);
+            this.LabelEmbalajeXAlto.TabIndex = 159;
+            this.LabelEmbalajeXAlto.Visible = false;
+            // 
+            // LabelEmbalajeXAncho
+            // 
+            this.LabelEmbalajeXAncho.Location = new System.Drawing.Point(833, 32);
+            this.LabelEmbalajeXAncho.Multiline = true;
+            this.LabelEmbalajeXAncho.Name = "LabelEmbalajeXAncho";
+            this.LabelEmbalajeXAncho.Size = new System.Drawing.Size(24, 38);
+            this.LabelEmbalajeXAncho.TabIndex = 160;
+            this.LabelEmbalajeXAncho.Visible = false;
+            // 
+            // LabelEmbalajeXLargo
+            // 
+            this.LabelEmbalajeXLargo.Location = new System.Drawing.Point(833, 32);
+            this.LabelEmbalajeXLargo.Multiline = true;
+            this.LabelEmbalajeXLargo.Name = "LabelEmbalajeXLargo";
+            this.LabelEmbalajeXLargo.Size = new System.Drawing.Size(24, 38);
+            this.LabelEmbalajeXLargo.TabIndex = 161;
+            this.LabelEmbalajeXLargo.Visible = false;
+            // 
+            // TxtAltoEstibado
+            // 
+            this.TxtAltoEstibado.Location = new System.Drawing.Point(833, 32);
+            this.TxtAltoEstibado.Multiline = true;
+            this.TxtAltoEstibado.Name = "TxtAltoEstibado";
+            this.TxtAltoEstibado.Size = new System.Drawing.Size(24, 38);
+            this.TxtAltoEstibado.TabIndex = 162;
+            this.TxtAltoEstibado.Visible = false;
+            // 
+            // TxtAnchoEstibado
+            // 
+            this.TxtAnchoEstibado.Location = new System.Drawing.Point(833, 32);
+            this.TxtAnchoEstibado.Multiline = true;
+            this.TxtAnchoEstibado.Name = "TxtAnchoEstibado";
+            this.TxtAnchoEstibado.Size = new System.Drawing.Size(24, 38);
+            this.TxtAnchoEstibado.TabIndex = 163;
+            this.TxtAnchoEstibado.Visible = false;
+            // 
+            // TxtLargoEstibado
+            // 
+            this.TxtLargoEstibado.Location = new System.Drawing.Point(833, 32);
+            this.TxtLargoEstibado.Multiline = true;
+            this.TxtLargoEstibado.Name = "TxtLargoEstibado";
+            this.TxtLargoEstibado.Size = new System.Drawing.Size(24, 38);
+            this.TxtLargoEstibado.TabIndex = 164;
+            this.TxtLargoEstibado.Visible = false;
+            // 
+            // LabelTotalEmbalajesXEstibas
+            // 
+            this.LabelTotalEmbalajesXEstibas.Location = new System.Drawing.Point(833, 32);
+            this.LabelTotalEmbalajesXEstibas.Multiline = true;
+            this.LabelTotalEmbalajesXEstibas.Name = "LabelTotalEmbalajesXEstibas";
+            this.LabelTotalEmbalajesXEstibas.Size = new System.Drawing.Size(24, 38);
+            this.LabelTotalEmbalajesXEstibas.TabIndex = 165;
+            this.LabelTotalEmbalajesXEstibas.Visible = false;
+            // 
+            // TxtTotalEmbalajesXEstibas
+            // 
+            this.TxtTotalEmbalajesXEstibas.Location = new System.Drawing.Point(833, 32);
+            this.TxtTotalEmbalajesXEstibas.Multiline = true;
+            this.TxtTotalEmbalajesXEstibas.Name = "TxtTotalEmbalajesXEstibas";
+            this.TxtTotalEmbalajesXEstibas.Size = new System.Drawing.Size(24, 38);
+            this.TxtTotalEmbalajesXEstibas.TabIndex = 166;
+            this.TxtTotalEmbalajesXEstibas.Visible = false;
+            // 
+            // TxtEmbalajeXAlto
+            // 
+            this.TxtEmbalajeXAlto.Location = new System.Drawing.Point(833, 32);
+            this.TxtEmbalajeXAlto.Multiline = true;
+            this.TxtEmbalajeXAlto.Name = "TxtEmbalajeXAlto";
+            this.TxtEmbalajeXAlto.Size = new System.Drawing.Size(24, 38);
+            this.TxtEmbalajeXAlto.TabIndex = 167;
+            this.TxtEmbalajeXAlto.Visible = false;
+            // 
+            // TxtEmbalajeXAncho
+            // 
+            this.TxtEmbalajeXAncho.Location = new System.Drawing.Point(833, 32);
+            this.TxtEmbalajeXAncho.Multiline = true;
+            this.TxtEmbalajeXAncho.Name = "TxtEmbalajeXAncho";
+            this.TxtEmbalajeXAncho.Size = new System.Drawing.Size(24, 38);
+            this.TxtEmbalajeXAncho.TabIndex = 168;
+            this.TxtEmbalajeXAncho.Visible = false;
+            // 
+            // TxtEmbalajeXLargo
+            // 
+            this.TxtEmbalajeXLargo.Location = new System.Drawing.Point(833, 32);
+            this.TxtEmbalajeXLargo.Multiline = true;
+            this.TxtEmbalajeXLargo.Name = "TxtEmbalajeXLargo";
+            this.TxtEmbalajeXLargo.Size = new System.Drawing.Size(24, 38);
+            this.TxtEmbalajeXLargo.TabIndex = 169;
+            this.TxtEmbalajeXLargo.Visible = false;
             // 
             // FrmGestionarContenedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 833);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.TxtEmbalajeXLargo);
+            this.Controls.Add(this.TxtEmbalajeXAncho);
+            this.Controls.Add(this.TxtEmbalajeXAlto);
+            this.Controls.Add(this.TxtTotalEmbalajesXEstibas);
+            this.Controls.Add(this.LabelTotalEmbalajesXEstibas);
+            this.Controls.Add(this.TxtLargoEstibado);
+            this.Controls.Add(this.TxtAnchoEstibado);
+            this.Controls.Add(this.TxtAltoEstibado);
+            this.Controls.Add(this.LabelEmbalajeXLargo);
+            this.Controls.Add(this.LabelEmbalajeXAncho);
+            this.Controls.Add(this.LabelEmbalajeXAlto);
+            this.Controls.Add(this.TxtRefEmbalajeEnEstibado);
+            this.Controls.Add(this.TxtProductoXLargo);
+            this.Controls.Add(this.TxtProductoXAncho);
+            this.Controls.Add(this.TxtProductoXAlto);
+            this.Controls.Add(this.TxtTotalEmpPrimXEmbalaje);
+            this.Controls.Add(this.TxtAltoEmbalaje);
+            this.Controls.Add(this.TxtAnchoEmbalaje);
+            this.Controls.Add(this.TxtLargoEmbalaje);
+            this.Controls.Add(this.TxtPesoEmpaqueX);
+            this.Controls.Add(this.TxtPrecioProdX);
+            this.Controls.Add(this.TxtCantProd);
+            this.Controls.Add(this.TxtPesoEmpaque);
+            this.Controls.Add(this.TxtAlto);
+            this.Controls.Add(this.TxtAncho);
+            this.Controls.Add(this.TxtLargo);
+            this.Controls.Add(this.TxtEmpaqueEnEmbalaje);
+            this.Controls.Add(this.TxtPrecioProd);
+            this.Controls.Add(this.TxtPesoProd);
+            this.Controls.Add(this.TxtNombProd);
+            this.Controls.Add(this.TxtRefProducto);
+            this.Controls.Add(this.CmbRefEstibadoEnContenedor);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.LabelTotalEmbalEnContenedor);
             this.Controls.Add(this.label8);
@@ -422,6 +763,7 @@ namespace Presentación_GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmGestionarContenedor";
             this.Text = "FrmGestionarContenedor";
+            this.Load += new System.EventHandler(this.FrmGestionarContenedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsultaContenedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -461,6 +803,37 @@ namespace Presentación_GUI
         private System.Windows.Forms.Label LabelTotalEmbalEnContenedor;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CmbRefEstibadoEnContenedor;
+        private System.Windows.Forms.TextBox TxtProductoXLargo;
+        private System.Windows.Forms.TextBox TxtProductoXAncho;
+        private System.Windows.Forms.TextBox TxtProductoXAlto;
+        private System.Windows.Forms.TextBox TxtTotalEmpPrimXEmbalaje;
+        private System.Windows.Forms.TextBox TxtAltoEmbalaje;
+        private System.Windows.Forms.TextBox TxtAnchoEmbalaje;
+        private System.Windows.Forms.TextBox TxtLargoEmbalaje;
+        private System.Windows.Forms.TextBox TxtPesoEmpaqueX;
+        private System.Windows.Forms.TextBox TxtPrecioProdX;
+        private System.Windows.Forms.TextBox TxtCantProd;
+        private System.Windows.Forms.TextBox TxtPesoEmpaque;
+        private System.Windows.Forms.TextBox TxtAlto;
+        private System.Windows.Forms.TextBox TxtAncho;
+        private System.Windows.Forms.TextBox TxtLargo;
+        private System.Windows.Forms.TextBox TxtEmpaqueEnEmbalaje;
+        private System.Windows.Forms.TextBox TxtPrecioProd;
+        private System.Windows.Forms.TextBox TxtPesoProd;
+        private System.Windows.Forms.TextBox TxtNombProd;
+        private System.Windows.Forms.TextBox TxtRefProducto;
+        private System.Windows.Forms.TextBox TxtRefEmbalajeEnEstibado;
+        private System.Windows.Forms.TextBox LabelEmbalajeXAlto;
+        private System.Windows.Forms.TextBox LabelEmbalajeXAncho;
+        private System.Windows.Forms.TextBox LabelEmbalajeXLargo;
+        private System.Windows.Forms.TextBox TxtAltoEstibado;
+        private System.Windows.Forms.TextBox TxtAnchoEstibado;
+        private System.Windows.Forms.TextBox TxtLargoEstibado;
+        private System.Windows.Forms.TextBox LabelTotalEmbalajesXEstibas;
+        private System.Windows.Forms.TextBox TxtTotalEmbalajesXEstibas;
+        private System.Windows.Forms.TextBox TxtEmbalajeXAlto;
+        private System.Windows.Forms.TextBox TxtEmbalajeXAncho;
+        private System.Windows.Forms.TextBox TxtEmbalajeXLargo;
     }
 }

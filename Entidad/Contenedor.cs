@@ -15,6 +15,7 @@ namespace Entidad
         public decimal AnchoContenedor { get; set; }
         public decimal EstibadoXLargo { get; set; }
         public decimal EstibadoXAncho { get; set; }
+        public decimal TotalEstibasXContenedor { get; set; }
         public  int NumEstibasXProducto { get; set; }
         public int TotalEmbalajesEnContenedor { get; set; }
     }

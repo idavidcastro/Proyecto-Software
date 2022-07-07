@@ -57,11 +57,11 @@ namespace Presentación_GUI
             
             totaltotal = total1 * total2 * total3;
 
-            LabelProductoXLargo.Text = total1.ToString();
-            LabelProductoXAncho.Text = total2.ToString();
-            LabelProductoXAlto.Text = total3.ToString();
+            LabelProductoXLargo.Text = ((int)total1).ToString();
+            LabelProductoXAncho.Text = ((int)total2).ToString();
+            LabelProductoXAlto.Text =  ((int)total3).ToString();
 
-            LabelTotalEmpPrimXEmbalaje.Text = totaltotal.ToString();
+            LabelTotalEmpPrimXEmbalaje.Text = ((int)totaltotal).ToString();
         }
 
         private void FrmGestionarEmbalaje_Load(object sender, EventArgs e)
@@ -74,8 +74,8 @@ namespace Presentación_GUI
             producto = new Producto();
             producto.RefProducto = TxtRefProducto.Text;
             producto.NombreProducto = TxtNombProd.Text;
-            producto.PesoProducto = decimal.Parse(TxtPesoProd.Text);
-            producto.PrecioProducto = decimal.Parse(TxtPrecioProd.Text);
+            producto.PesoProducto = double.Parse(TxtPesoProd.Text);
+            producto.PrecioProducto = double.Parse(TxtPrecioProd.Text);
 
             empaque = new Empaque();
             empaque.RefEmpaque = CmbRefEmpaqueEnEmbalaje.Text;
