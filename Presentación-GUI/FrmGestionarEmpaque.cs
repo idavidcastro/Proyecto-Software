@@ -275,7 +275,7 @@ namespace Presentación_GUI
 
         private void BtnEliminarEmpaque_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
