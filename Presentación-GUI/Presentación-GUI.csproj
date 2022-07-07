@@ -162,5 +162,8 @@
   <ItemGroup>
     <None Include="Resources\package_122391.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\101057512-diseño-del-icono-del-logotipo-de-entrega %281%29.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

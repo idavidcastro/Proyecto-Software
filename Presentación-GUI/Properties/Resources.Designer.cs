@@ -63,6 +63,16 @@ namespace Presentación_GUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _101057512_diseño_del_icono_del_logotipo_de_entrega__1_ {
+            get {
+                object obj = ResourceManager.GetObject("101057512-diseño-del-icono-del-logotipo-de-entrega (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap package_122391 {
             get {
                 object obj = ResourceManager.GetObject("package_122391", resourceCulture);

@@ -29,6 +29,7 @@ namespace Presentación_GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestiones));
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnVolverGestiones = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,9 +40,12 @@ namespace Presentación_GUI
             this.BtnGestionarEmpaque = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelBlancoGestiones = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PanelBlancoGestiones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -136,19 +140,31 @@ namespace Presentación_GUI
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Presentación_GUI.Properties.Resources._101057512_diseño_del_icono_del_logotipo_de_entrega__1_;
             this.pictureBox1.Location = new System.Drawing.Point(98, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(121, 98);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // PanelBlancoGestiones
             // 
+            this.PanelBlancoGestiones.Controls.Add(this.pictureBox2);
             this.PanelBlancoGestiones.Location = new System.Drawing.Point(351, 0);
             this.PanelBlancoGestiones.Name = "PanelBlancoGestiones";
             this.PanelBlancoGestiones.Size = new System.Drawing.Size(1171, 833);
             this.PanelBlancoGestiones.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Presentación_GUI.Properties.Resources._101057512_diseño_del_icono_del_logotipo_de_entrega__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(480, 242);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(281, 270);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // FrmGestiones
             // 
@@ -158,13 +174,15 @@ namespace Presentación_GUI
             this.ClientSize = new System.Drawing.Size(1522, 833);
             this.Controls.Add(this.PanelBlancoGestiones);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGestiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmGestion";
+            this.Text = "Gestiones";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.PanelBlancoGestiones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,5 +199,6 @@ namespace Presentación_GUI
         private System.Windows.Forms.Button BtnGestionarEmbalaje;
         private System.Windows.Forms.Panel PanelBlancoGestiones;
         private System.Windows.Forms.Button BtnVolverGestiones;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

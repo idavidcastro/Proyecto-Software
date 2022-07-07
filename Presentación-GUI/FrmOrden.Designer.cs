@@ -29,6 +29,7 @@ namespace Presentación_GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrden));
             this.BtnNuevasGestiones = new System.Windows.Forms.Button();
             this.BtnConsultarOrden = new System.Windows.Forms.Button();
             this.PanelConsultarOrden = new System.Windows.Forms.Panel();
@@ -813,6 +814,7 @@ namespace Presentación_GUI
             this.Controls.Add(this.BtnNuevasGestiones);
             this.Controls.Add(this.PanelRegistrarOrden);
             this.Controls.Add(this.PanelConsultarOrden);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmOrden";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orden";
