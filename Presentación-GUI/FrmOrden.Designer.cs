@@ -32,6 +32,16 @@ namespace Presentación_GUI
             this.BtnNuevasGestiones = new System.Windows.Forms.Button();
             this.BtnConsultarOrden = new System.Windows.Forms.Button();
             this.PanelConsultarOrden = new System.Windows.Forms.Panel();
+            this.LabelValorTotalCargaUSD = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.LabelValorTotalCargaCOP = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.LabelAlquilerContenedores = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.LabelAlquilerEstibas = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.LabelValorTotalTodasOrdenes = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.BtnConsultarOrdenPanel = new System.Windows.Forms.Button();
             this.DataOrdenes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -84,18 +94,8 @@ namespace Presentación_GUI
             this.TxtAnchoContenedor = new System.Windows.Forms.TextBox();
             this.TxtLargoContenedor = new System.Windows.Forms.TextBox();
             this.TxtTipoContenedor = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.LabelValorTotalTodasOrdenes = new System.Windows.Forms.Label();
             this.TxtAlquilerEstiba = new System.Windows.Forms.TextBox();
             this.TxtAlquilerContenedor = new System.Windows.Forms.TextBox();
-            this.LabelAlquilerEstibas = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.LabelAlquilerContenedores = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.LabelValorTotalCargaCOP = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.LabelValorTotalCargaUSD = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.PanelConsultarOrden.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataOrdenes)).BeginInit();
             this.PanelRegistrarOrden.SuspendLayout();
@@ -106,7 +106,7 @@ namespace Presentación_GUI
             this.BtnNuevasGestiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.BtnNuevasGestiones.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNuevasGestiones.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnNuevasGestiones.Location = new System.Drawing.Point(78, 150);
+            this.BtnNuevasGestiones.Location = new System.Drawing.Point(78, 112);
             this.BtnNuevasGestiones.Name = "BtnNuevasGestiones";
             this.BtnNuevasGestiones.Size = new System.Drawing.Size(255, 50);
             this.BtnNuevasGestiones.TabIndex = 0;
@@ -119,7 +119,7 @@ namespace Presentación_GUI
             this.BtnConsultarOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.BtnConsultarOrden.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConsultarOrden.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnConsultarOrden.Location = new System.Drawing.Point(744, 150);
+            this.BtnConsultarOrden.Location = new System.Drawing.Point(744, 112);
             this.BtnConsultarOrden.Name = "BtnConsultarOrden";
             this.BtnConsultarOrden.Size = new System.Drawing.Size(255, 50);
             this.BtnConsultarOrden.TabIndex = 2;
@@ -149,6 +149,106 @@ namespace Presentación_GUI
             this.PanelConsultarOrden.TabIndex = 3;
             this.PanelConsultarOrden.Visible = false;
             this.PanelConsultarOrden.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelConsultarOrden_Paint);
+            // 
+            // LabelValorTotalCargaUSD
+            // 
+            this.LabelValorTotalCargaUSD.AutoSize = true;
+            this.LabelValorTotalCargaUSD.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelValorTotalCargaUSD.Location = new System.Drawing.Point(656, 382);
+            this.LabelValorTotalCargaUSD.Name = "LabelValorTotalCargaUSD";
+            this.LabelValorTotalCargaUSD.Size = new System.Drawing.Size(17, 20);
+            this.LabelValorTotalCargaUSD.TabIndex = 220;
+            this.LabelValorTotalCargaUSD.Text = "0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(237, 392);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(222, 20);
+            this.label12.TabIndex = 219;
+            this.label12.Text = "Valor total de la carga (USD):";
+            // 
+            // LabelValorTotalCargaCOP
+            // 
+            this.LabelValorTotalCargaCOP.AutoSize = true;
+            this.LabelValorTotalCargaCOP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelValorTotalCargaCOP.Location = new System.Drawing.Point(656, 348);
+            this.LabelValorTotalCargaCOP.Name = "LabelValorTotalCargaCOP";
+            this.LabelValorTotalCargaCOP.Size = new System.Drawing.Size(17, 20);
+            this.LabelValorTotalCargaCOP.TabIndex = 218;
+            this.LabelValorTotalCargaCOP.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(232, 348);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(227, 20);
+            this.label10.TabIndex = 217;
+            this.label10.Text = "Valor total de la carga (COP):";
+            // 
+            // LabelAlquilerContenedores
+            // 
+            this.LabelAlquilerContenedores.AutoSize = true;
+            this.LabelAlquilerContenedores.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelAlquilerContenedores.Location = new System.Drawing.Point(656, 275);
+            this.LabelAlquilerContenedores.Name = "LabelAlquilerContenedores";
+            this.LabelAlquilerContenedores.Size = new System.Drawing.Size(17, 20);
+            this.LabelAlquilerContenedores.TabIndex = 216;
+            this.LabelAlquilerContenedores.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(285, 275);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(175, 20);
+            this.label8.TabIndex = 215;
+            this.label8.Text = "Alquiler contenedores:";
+            // 
+            // LabelAlquilerEstibas
+            // 
+            this.LabelAlquilerEstibas.AutoSize = true;
+            this.LabelAlquilerEstibas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelAlquilerEstibas.Location = new System.Drawing.Point(656, 309);
+            this.LabelAlquilerEstibas.Name = "LabelAlquilerEstibas";
+            this.LabelAlquilerEstibas.Size = new System.Drawing.Size(17, 20);
+            this.LabelAlquilerEstibas.TabIndex = 214;
+            this.LabelAlquilerEstibas.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(339, 309);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 20);
+            this.label6.TabIndex = 213;
+            this.label6.Text = "Alquiler estibas:";
+            // 
+            // LabelValorTotalTodasOrdenes
+            // 
+            this.LabelValorTotalTodasOrdenes.AutoSize = true;
+            this.LabelValorTotalTodasOrdenes.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelValorTotalTodasOrdenes.Location = new System.Drawing.Point(656, 242);
+            this.LabelValorTotalTodasOrdenes.Name = "LabelValorTotalTodasOrdenes";
+            this.LabelValorTotalTodasOrdenes.Size = new System.Drawing.Size(17, 20);
+            this.LabelValorTotalTodasOrdenes.TabIndex = 212;
+            this.LabelValorTotalTodasOrdenes.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(214, 242);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(245, 20);
+            this.label4.TabIndex = 211;
+            this.label4.Text = "Valor total de todas las ordenes:";
             // 
             // BtnConsultarOrdenPanel
             // 
@@ -213,7 +313,7 @@ namespace Presentación_GUI
             this.BtnRegistrarOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.BtnRegistrarOrden.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegistrarOrden.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnRegistrarOrden.Location = new System.Drawing.Point(413, 150);
+            this.BtnRegistrarOrden.Location = new System.Drawing.Point(413, 112);
             this.BtnRegistrarOrden.Name = "BtnRegistrarOrden";
             this.BtnRegistrarOrden.Size = new System.Drawing.Size(255, 50);
             this.BtnRegistrarOrden.TabIndex = 5;
@@ -644,26 +744,6 @@ namespace Presentación_GUI
             this.TxtTipoContenedor.TabIndex = 209;
             this.TxtTipoContenedor.Visible = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(214, 242);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(245, 20);
-            this.label4.TabIndex = 211;
-            this.label4.Text = "Valor total de todas las ordenes:";
-            // 
-            // LabelValorTotalTodasOrdenes
-            // 
-            this.LabelValorTotalTodasOrdenes.AutoSize = true;
-            this.LabelValorTotalTodasOrdenes.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelValorTotalTodasOrdenes.Location = new System.Drawing.Point(656, 242);
-            this.LabelValorTotalTodasOrdenes.Name = "LabelValorTotalTodasOrdenes";
-            this.LabelValorTotalTodasOrdenes.Size = new System.Drawing.Size(17, 20);
-            this.LabelValorTotalTodasOrdenes.TabIndex = 212;
-            this.LabelValorTotalTodasOrdenes.Text = "0";
-            // 
             // TxtAlquilerEstiba
             // 
             this.TxtAlquilerEstiba.Location = new System.Drawing.Point(1040, 12);
@@ -682,91 +762,12 @@ namespace Presentación_GUI
             this.TxtAlquilerContenedor.TabIndex = 211;
             this.TxtAlquilerContenedor.Visible = false;
             // 
-            // LabelAlquilerEstibas
-            // 
-            this.LabelAlquilerEstibas.AutoSize = true;
-            this.LabelAlquilerEstibas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelAlquilerEstibas.Location = new System.Drawing.Point(656, 275);
-            this.LabelAlquilerEstibas.Name = "LabelAlquilerEstibas";
-            this.LabelAlquilerEstibas.Size = new System.Drawing.Size(17, 20);
-            this.LabelAlquilerEstibas.TabIndex = 214;
-            this.LabelAlquilerEstibas.Text = "0";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(338, 275);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 20);
-            this.label6.TabIndex = 213;
-            this.label6.Text = "Alquiler estibas:";
-            // 
-            // LabelAlquilerContenedores
-            // 
-            this.LabelAlquilerContenedores.AutoSize = true;
-            this.LabelAlquilerContenedores.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelAlquilerContenedores.Location = new System.Drawing.Point(656, 309);
-            this.LabelAlquilerContenedores.Name = "LabelAlquilerContenedores";
-            this.LabelAlquilerContenedores.Size = new System.Drawing.Size(17, 20);
-            this.LabelAlquilerContenedores.TabIndex = 216;
-            this.LabelAlquilerContenedores.Text = "0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(284, 309);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(175, 20);
-            this.label8.TabIndex = 215;
-            this.label8.Text = "Alquiler contenedores:";
-            // 
-            // LabelValorTotalCargaCOP
-            // 
-            this.LabelValorTotalCargaCOP.AutoSize = true;
-            this.LabelValorTotalCargaCOP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelValorTotalCargaCOP.Location = new System.Drawing.Point(656, 348);
-            this.LabelValorTotalCargaCOP.Name = "LabelValorTotalCargaCOP";
-            this.LabelValorTotalCargaCOP.Size = new System.Drawing.Size(17, 20);
-            this.LabelValorTotalCargaCOP.TabIndex = 218;
-            this.LabelValorTotalCargaCOP.Text = "0";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(232, 348);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(227, 20);
-            this.label10.TabIndex = 217;
-            this.label10.Text = "Valor total de la carga (COP):";
-            // 
-            // LabelValorTotalCargaUSD
-            // 
-            this.LabelValorTotalCargaUSD.AutoSize = true;
-            this.LabelValorTotalCargaUSD.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelValorTotalCargaUSD.Location = new System.Drawing.Point(656, 382);
-            this.LabelValorTotalCargaUSD.Name = "LabelValorTotalCargaUSD";
-            this.LabelValorTotalCargaUSD.Size = new System.Drawing.Size(17, 20);
-            this.LabelValorTotalCargaUSD.TabIndex = 220;
-            this.LabelValorTotalCargaUSD.Text = "0";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(237, 392);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(222, 20);
-            this.label12.TabIndex = 219;
-            this.label12.Text = "Valor total de la carga (USD):";
-            // 
             // FrmOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 754);
+            this.Controls.Add(this.PanelConsultarOrden);
             this.Controls.Add(this.TxtAlquilerContenedor);
             this.Controls.Add(this.TxtAlquilerEstiba);
             this.Controls.Add(this.TxtTipoContenedor);
@@ -813,7 +814,6 @@ namespace Presentación_GUI
             this.Controls.Add(this.BtnCerrarOrden);
             this.Controls.Add(this.BtnConsultarOrden);
             this.Controls.Add(this.BtnNuevasGestiones);
-            this.Controls.Add(this.PanelConsultarOrden);
             this.Controls.Add(this.PanelRegistrarOrden);
             this.Name = "FrmOrden";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

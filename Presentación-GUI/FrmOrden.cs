@@ -61,6 +61,29 @@ namespace Presentación_GUI
             }
             LabelValorTotalTodasOrdenes.Text = acum.ToString();
 
+            if (acum > 0)
+            {
+                int alquilerestiba, alquilercont, valortodasordenes;
+                double valortotalcargaCOP, valortotalcargaUSD, preciodolar;
+
+                alquilerestiba = 1870000;
+                alquilercont = 2850000;
+                valortodasordenes = int.Parse(LabelValorTotalTodasOrdenes.Text);
+                LabelAlquilerContenedores.Text = alquilercont.ToString();
+                LabelAlquilerEstibas.Text = alquilerestiba.ToString();
+
+                valortotalcargaCOP = alquilerestiba + alquilercont + valortodasordenes;
+
+                LabelValorTotalCargaCOP.Text = valortotalcargaCOP.ToString();
+
+                preciodolar = 0.00023;
+
+                valortotalcargaUSD = preciodolar * valortotalcargaCOP;
+
+                LabelValorTotalCargaUSD.Text = valortotalcargaUSD.ToString();
+            }
+            
+
             cn.Close();
         }
         
@@ -160,7 +183,7 @@ namespace Presentación_GUI
 
             string mensaje = ordenService.GuardarOrden(orden);
             MessageBox.Show(mensaje, "Guardar orden", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            /*
             if (TxtTipoContenedor.Text == "Terrestre (40 pies)")
             {
                 int valorestiba = 85000;
@@ -191,7 +214,7 @@ namespace Presentación_GUI
             valordolar = 0.00023;
 
             LabelValorTotalCargaUSD.Text= (valorcargaCOP * valordolar).ToString();
-
+            */
         }
 
         private void CmbRefContenedorEnFrmOrden_SelectedIndexChanged(object sender, EventArgs e)

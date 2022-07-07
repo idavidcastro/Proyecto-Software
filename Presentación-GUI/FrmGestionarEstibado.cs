@@ -52,9 +52,9 @@ namespace Presentación_GUI
             vlr5 = decimal.Parse(TxtAnchoEstibado.Text);
             vlr6 = decimal.Parse(TxtAltoEstibado.Text);
 
-            total1 = vlr4 / vlr1;
-            total2 = vlr5 / vlr2;
-            total3 = vlr6 / vlr3;
+            total1 = (int)vlr4 / (int)vlr1;
+            total2 = (int)vlr5 / (int)vlr2;
+            total3 = (int)vlr6 / (int)vlr3;
 
             totaltotal = total1 * total2 * total3;
 
