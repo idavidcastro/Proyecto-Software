@@ -27,6 +27,7 @@ namespace Presentación_GUI
             InitializeComponent();
             contenedorService = new ContenedorService(ConfigConnectionString.Cadena);
             MostrarEstibas();
+            MostrarContenedor();
         }
         private void MostrarEstibas()
         {
@@ -38,6 +39,20 @@ namespace Presentación_GUI
             while (reader.Read())
             {
                 CmbRefEstibadoEnContenedor.Items.Add(reader.GetString(0));
+            }
+            cn.Close();
+        }
+        private void MostrarContenedor()
+        {
+            SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
+            SqlCommand cm = new SqlCommand("select *from Contenedor", cn);
+            cn.Open();
+            SqlDataReader reader = cm.ExecuteReader()
+;
+            while (reader.Read())
+            {
+                CmbReferenciaConsultaContenedor.Items.Add(reader.GetString(0));
+                CmbReferenciaContenedor.Items.Add(reader.GetString(0));
             }
             cn.Close();
         }
@@ -205,6 +220,111 @@ namespace Presentación_GUI
         private void FrmGestionarContenedor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnEditarContenedor_Click(object sender, EventArgs e)
+        {
+            BusquedaReponseContenedor respuesta;
+
+            respuesta = contenedorService.BuscarContenedor(CmbReferenciaContenedor.Text);
+
+            if (respuesta.Error)
+            {
+                MessageBox.Show(respuesta.Mensaje);
+            }
+            else
+            {
+                TxtRefContenedor.Text = respuesta.Contenedor.RefContenedor;
+                CmbRefEstibadoEnContenedor.Text = respuesta.Contenedor.Estibado.RefEstibado;
+                CmbTipoContenedor.Text = respuesta.Contenedor.TipoContenedor;
+                TxtLargoContenedor.Text = respuesta.Contenedor.LargoContenedor.ToString();
+                TxtAnchoContenedor.Text = respuesta.Contenedor.AnchoContenedor.ToString();
+                TxtNumEstibasXProducto.Text = respuesta.Contenedor.NumEstibasXProducto.ToString();
+                LabelEstibadoXLargo.Text = respuesta.Contenedor.EstibadoXLargo.ToString();
+                LabelEstibadoXAncho.Text = respuesta.Contenedor.EstibadoXAncho.ToString();
+                LabelTotalEstibasXContenedor.Text = respuesta.Contenedor.TotalEstibasXContenedor.ToString();
+                LabelTotalEmbalEnContenedor.Text = respuesta.Contenedor.TotalEmbalajesEnContenedor.ToString();
+            }
+        }
+
+        private void BtnActContenedor_Click(object sender, EventArgs e)
+        {
+            producto = new Producto();
+            producto.RefProducto = TxtRefProducto.Text;
+            producto.NombreProducto = TxtNombProd.Text;
+            producto.PesoProducto = double.Parse(TxtPesoProd.Text);
+            producto.PrecioProducto = double.Parse(TxtPrecioProd.Text);
+
+            empaque = new Empaque();
+            empaque.RefEmpaque = TxtEmpaqueEnEmbalaje.Text;
+            empaque.Producto = producto;
+            empaque.Largo = decimal.Parse(TxtLargo.Text);
+            empaque.Ancho = decimal.Parse(TxtAncho.Text);
+            empaque.Alto = decimal.Parse(TxtAlto.Text);
+            empaque.PesoEmpaque = decimal.Parse(TxtPesoEmpaque.Text);
+            empaque.CantidadProductos = int.Parse(TxtCantProd.Text);
+            empaque.PrecioProdxCantProd = decimal.Parse(TxtPrecioProdX.Text);
+            empaque.PesoEmpaquexPesoProducto = decimal.Parse(TxtPesoEmpaqueX.Text);
+
+            embalaje = new Embalaje();
+            embalaje.RefEmbalaje = TxtRefEmbalajeEnEstibado.Text;
+            embalaje.Empaque = empaque;
+            embalaje.Largo = decimal.Parse(TxtLargoEmbalaje.Text);
+            embalaje.Ancho = decimal.Parse(TxtAnchoEmbalaje.Text);
+            embalaje.Alto = decimal.Parse(TxtAltoEmbalaje.Text);
+            embalaje.EmpProdXLargo = decimal.Parse(TxtProductoXLargo.Text);
+            embalaje.EmpProdXAncho = decimal.Parse(TxtProductoXAncho.Text);
+            embalaje.EmpProdXAlto = decimal.Parse(TxtProductoXAlto.Text);
+            embalaje.TotalEmpPrimarioXEmbalaje = decimal.Parse(TxtTotalEmpPrimXEmbalaje.Text);
+
+            estibado = new Estibado();
+            estibado.RefEstibado = CmbRefEstibadoEnContenedor.Text;
+            estibado.Embalaje = embalaje;
+            estibado.LargoEstibado = decimal.Parse(TxtLargoEstibado.Text);
+            estibado.AnchoEstibado = decimal.Parse(TxtAnchoEstibado.Text);
+            estibado.AltoEstibado = decimal.Parse(TxtAltoEstibado.Text);
+            estibado.EmbalajeXLargo = decimal.Parse(TxtEmbalajeXLargo.Text);
+            estibado.EmbalajeXAncho = decimal.Parse(TxtEmbalajeXAncho.Text);
+            estibado.EmbalajeXAlto = decimal.Parse(TxtEmbalajeXAlto.Text);
+            estibado.TotalEmbalajesXEstibas = decimal.Parse(TxtTotalEmbalajesXEstibas.Text);
+
+            contenedor = new Contenedor();
+            contenedor.RefContenedor = TxtRefContenedor.Text;
+            contenedor.Estibado = estibado;
+            contenedor.TipoContenedor = CmbTipoContenedor.Text;
+            contenedor.LargoContenedor = decimal.Parse(TxtLargoContenedor.Text);
+            contenedor.AnchoContenedor = decimal.Parse(TxtAnchoContenedor.Text);
+            contenedor.EstibadoXLargo = decimal.Parse(LabelEstibadoXLargo.Text);
+            contenedor.EstibadoXAncho = decimal.Parse(LabelEstibadoXAncho.Text);
+            contenedor.TotalEstibasXContenedor = decimal.Parse(LabelTotalEstibasXContenedor.Text);
+            contenedor.NumEstibasXProducto = int.Parse(TxtNumEstibasXProducto.Text);
+            contenedor.TotalEmbalajesEnContenedor = int.Parse(LabelTotalEmbalEnContenedor.Text);
+
+            string mensaje = contenedorService.ModificarContenedor(contenedor, TxtRefContenedor.Text);
+            MessageBox.Show(mensaje, "Modificar contenedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtnEliminarContenedor_Click(object sender, EventArgs e)
+        {
+            string mensaje = contenedorService.EliminarContenedor(CmbReferenciaContenedor.Text);
+            MessageBox.Show(mensaje, "Eliminar contenedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtnConsultarContenedor_Click(object sender, EventArgs e)
+        {
+            ConsultaReponseContenedor respuesta;
+            dataGridViewConsultaContenedor.DataSource = null;
+
+            respuesta = contenedorService.ConsultarListContenedor(CmbReferenciaConsultaContenedor.Text);
+
+            if (respuesta.Error)
+            {
+                MessageBox.Show(respuesta.Mensaje);
+            }
+            else
+            {
+                dataGridViewConsultaContenedor.DataSource = respuesta.Contenedores;
+            }
         }
     }
 }

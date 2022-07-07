@@ -30,16 +30,15 @@ namespace Presentación_GUI
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.BtnGestionarEmpaque = new System.Windows.Forms.Button();
-            this.BtnGestionarEmbalaje = new System.Windows.Forms.Button();
-            this.BtnProductoStock = new System.Windows.Forms.Button();
-            this.BtnGestionarEstibado = new System.Windows.Forms.Button();
-            this.BtnGestionarContenedor = new System.Windows.Forms.Button();
-            this.PanelBlancoGestiones = new System.Windows.Forms.Panel();
             this.BtnVolverGestiones = new System.Windows.Forms.Button();
-            this.BtnCostoFinal = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnGestionarContenedor = new System.Windows.Forms.Button();
+            this.BtnGestionarEstibado = new System.Windows.Forms.Button();
+            this.BtnProductoStock = new System.Windows.Forms.Button();
+            this.BtnGestionarEmbalaje = new System.Windows.Forms.Button();
+            this.BtnGestionarEmpaque = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PanelBlancoGestiones = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,9 +56,19 @@ namespace Presentación_GUI
             this.panel1.Size = new System.Drawing.Size(345, 833);
             this.panel1.TabIndex = 0;
             // 
+            // BtnVolverGestiones
+            // 
+            this.BtnVolverGestiones.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVolverGestiones.Location = new System.Drawing.Point(15, 746);
+            this.BtnVolverGestiones.Name = "BtnVolverGestiones";
+            this.BtnVolverGestiones.Size = new System.Drawing.Size(314, 42);
+            this.BtnVolverGestiones.TabIndex = 6;
+            this.BtnVolverGestiones.Text = "Volver";
+            this.BtnVolverGestiones.UseVisualStyleBackColor = true;
+            this.BtnVolverGestiones.Click += new System.EventHandler(this.BtnVolverGestiones_Click);
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.BtnCostoFinal);
             this.panel2.Controls.Add(this.BtnGestionarContenedor);
             this.panel2.Controls.Add(this.BtnGestionarEstibado);
             this.panel2.Controls.Add(this.BtnProductoStock);
@@ -67,52 +76,8 @@ namespace Presentación_GUI
             this.panel2.Controls.Add(this.BtnGestionarEmpaque);
             this.panel2.Location = new System.Drawing.Point(12, 159);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(317, 382);
+            this.panel2.Size = new System.Drawing.Size(317, 341);
             this.panel2.TabIndex = 0;
-            // 
-            // BtnGestionarEmpaque
-            // 
-            this.BtnGestionarEmpaque.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGestionarEmpaque.Location = new System.Drawing.Point(3, 83);
-            this.BtnGestionarEmpaque.Name = "BtnGestionarEmpaque";
-            this.BtnGestionarEmpaque.Size = new System.Drawing.Size(311, 42);
-            this.BtnGestionarEmpaque.TabIndex = 1;
-            this.BtnGestionarEmpaque.Text = "Gestionar Empaque";
-            this.BtnGestionarEmpaque.UseVisualStyleBackColor = true;
-            this.BtnGestionarEmpaque.Click += new System.EventHandler(this.BtnGestionarEmpaque_Click);
-            // 
-            // BtnGestionarEmbalaje
-            // 
-            this.BtnGestionarEmbalaje.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGestionarEmbalaje.Location = new System.Drawing.Point(3, 131);
-            this.BtnGestionarEmbalaje.Name = "BtnGestionarEmbalaje";
-            this.BtnGestionarEmbalaje.Size = new System.Drawing.Size(311, 42);
-            this.BtnGestionarEmbalaje.TabIndex = 2;
-            this.BtnGestionarEmbalaje.Text = "Gestionar Embalaje";
-            this.BtnGestionarEmbalaje.UseVisualStyleBackColor = true;
-            this.BtnGestionarEmbalaje.Click += new System.EventHandler(this.BtnGestionarEmbalaje_Click);
-            // 
-            // BtnProductoStock
-            // 
-            this.BtnProductoStock.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnProductoStock.Location = new System.Drawing.Point(3, 35);
-            this.BtnProductoStock.Name = "BtnProductoStock";
-            this.BtnProductoStock.Size = new System.Drawing.Size(311, 42);
-            this.BtnProductoStock.TabIndex = 3;
-            this.BtnProductoStock.Text = "Nuevo Producto - STOCK";
-            this.BtnProductoStock.UseVisualStyleBackColor = true;
-            this.BtnProductoStock.Click += new System.EventHandler(this.BtnProductoStock_Click);
-            // 
-            // BtnGestionarEstibado
-            // 
-            this.BtnGestionarEstibado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGestionarEstibado.Location = new System.Drawing.Point(3, 179);
-            this.BtnGestionarEstibado.Name = "BtnGestionarEstibado";
-            this.BtnGestionarEstibado.Size = new System.Drawing.Size(311, 42);
-            this.BtnGestionarEstibado.TabIndex = 4;
-            this.BtnGestionarEstibado.Text = "Gestionar Estibado";
-            this.BtnGestionarEstibado.UseVisualStyleBackColor = true;
-            this.BtnGestionarEstibado.Click += new System.EventHandler(this.BtnGestionarEstibado_Click);
             // 
             // BtnGestionarContenedor
             // 
@@ -125,34 +90,49 @@ namespace Presentación_GUI
             this.BtnGestionarContenedor.UseVisualStyleBackColor = true;
             this.BtnGestionarContenedor.Click += new System.EventHandler(this.BtnGestionarContenedor_Click);
             // 
-            // PanelBlancoGestiones
+            // BtnGestionarEstibado
             // 
-            this.PanelBlancoGestiones.Location = new System.Drawing.Point(351, 0);
-            this.PanelBlancoGestiones.Name = "PanelBlancoGestiones";
-            this.PanelBlancoGestiones.Size = new System.Drawing.Size(1171, 833);
-            this.PanelBlancoGestiones.TabIndex = 1;
+            this.BtnGestionarEstibado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGestionarEstibado.Location = new System.Drawing.Point(3, 179);
+            this.BtnGestionarEstibado.Name = "BtnGestionarEstibado";
+            this.BtnGestionarEstibado.Size = new System.Drawing.Size(311, 42);
+            this.BtnGestionarEstibado.TabIndex = 4;
+            this.BtnGestionarEstibado.Text = "Gestionar Estibado";
+            this.BtnGestionarEstibado.UseVisualStyleBackColor = true;
+            this.BtnGestionarEstibado.Click += new System.EventHandler(this.BtnGestionarEstibado_Click);
             // 
-            // BtnVolverGestiones
+            // BtnProductoStock
             // 
-            this.BtnVolverGestiones.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnVolverGestiones.Location = new System.Drawing.Point(15, 746);
-            this.BtnVolverGestiones.Name = "BtnVolverGestiones";
-            this.BtnVolverGestiones.Size = new System.Drawing.Size(314, 42);
-            this.BtnVolverGestiones.TabIndex = 6;
-            this.BtnVolverGestiones.Text = "Cerrar";
-            this.BtnVolverGestiones.UseVisualStyleBackColor = true;
-            this.BtnVolverGestiones.Click += new System.EventHandler(this.BtnVolverGestiones_Click);
+            this.BtnProductoStock.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProductoStock.Location = new System.Drawing.Point(3, 35);
+            this.BtnProductoStock.Name = "BtnProductoStock";
+            this.BtnProductoStock.Size = new System.Drawing.Size(311, 42);
+            this.BtnProductoStock.TabIndex = 3;
+            this.BtnProductoStock.Text = "Nuevo Producto - STOCK";
+            this.BtnProductoStock.UseVisualStyleBackColor = true;
+            this.BtnProductoStock.Click += new System.EventHandler(this.BtnProductoStock_Click);
             // 
-            // BtnCostoFinal
+            // BtnGestionarEmbalaje
             // 
-            this.BtnCostoFinal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCostoFinal.Location = new System.Drawing.Point(0, 326);
-            this.BtnCostoFinal.Name = "BtnCostoFinal";
-            this.BtnCostoFinal.Size = new System.Drawing.Size(311, 42);
-            this.BtnCostoFinal.TabIndex = 6;
-            this.BtnCostoFinal.Text = "Costo Final";
-            this.BtnCostoFinal.UseVisualStyleBackColor = true;
-            this.BtnCostoFinal.Click += new System.EventHandler(this.BtnCostoFinal_Click);
+            this.BtnGestionarEmbalaje.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGestionarEmbalaje.Location = new System.Drawing.Point(3, 131);
+            this.BtnGestionarEmbalaje.Name = "BtnGestionarEmbalaje";
+            this.BtnGestionarEmbalaje.Size = new System.Drawing.Size(311, 42);
+            this.BtnGestionarEmbalaje.TabIndex = 2;
+            this.BtnGestionarEmbalaje.Text = "Gestionar Embalaje";
+            this.BtnGestionarEmbalaje.UseVisualStyleBackColor = true;
+            this.BtnGestionarEmbalaje.Click += new System.EventHandler(this.BtnGestionarEmbalaje_Click);
+            // 
+            // BtnGestionarEmpaque
+            // 
+            this.BtnGestionarEmpaque.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGestionarEmpaque.Location = new System.Drawing.Point(3, 83);
+            this.BtnGestionarEmpaque.Name = "BtnGestionarEmpaque";
+            this.BtnGestionarEmpaque.Size = new System.Drawing.Size(311, 42);
+            this.BtnGestionarEmpaque.TabIndex = 1;
+            this.BtnGestionarEmpaque.Text = "Gestionar Empaque";
+            this.BtnGestionarEmpaque.UseVisualStyleBackColor = true;
+            this.BtnGestionarEmpaque.Click += new System.EventHandler(this.BtnGestionarEmpaque_Click);
             // 
             // pictureBox1
             // 
@@ -162,6 +142,13 @@ namespace Presentación_GUI
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // PanelBlancoGestiones
+            // 
+            this.PanelBlancoGestiones.Location = new System.Drawing.Point(351, 0);
+            this.PanelBlancoGestiones.Name = "PanelBlancoGestiones";
+            this.PanelBlancoGestiones.Size = new System.Drawing.Size(1171, 833);
+            this.PanelBlancoGestiones.TabIndex = 1;
             // 
             // FrmGestiones
             // 
@@ -194,6 +181,5 @@ namespace Presentación_GUI
         private System.Windows.Forms.Button BtnGestionarEmbalaje;
         private System.Windows.Forms.Panel PanelBlancoGestiones;
         private System.Windows.Forms.Button BtnVolverGestiones;
-        private System.Windows.Forms.Button BtnCostoFinal;
     }
 }

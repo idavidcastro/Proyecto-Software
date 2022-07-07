@@ -288,8 +288,6 @@ namespace Presentación_GUI
             // CmbRefOrdenConsultar
             // 
             this.CmbRefOrdenConsultar.FormattingEnabled = true;
-            this.CmbRefOrdenConsultar.Items.AddRange(new object[] {
-            "Todas"});
             this.CmbRefOrdenConsultar.Location = new System.Drawing.Point(343, 25);
             this.CmbRefOrdenConsultar.Name = "CmbRefOrdenConsultar";
             this.CmbRefOrdenConsultar.Size = new System.Drawing.Size(117, 24);
@@ -767,7 +765,6 @@ namespace Presentación_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 754);
-            this.Controls.Add(this.PanelConsultarOrden);
             this.Controls.Add(this.TxtAlquilerContenedor);
             this.Controls.Add(this.TxtAlquilerEstiba);
             this.Controls.Add(this.TxtTipoContenedor);
@@ -815,6 +812,7 @@ namespace Presentación_GUI
             this.Controls.Add(this.BtnConsultarOrden);
             this.Controls.Add(this.BtnNuevasGestiones);
             this.Controls.Add(this.PanelRegistrarOrden);
+            this.Controls.Add(this.PanelConsultarOrden);
             this.Name = "FrmOrden";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orden";

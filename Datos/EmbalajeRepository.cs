@@ -51,24 +51,22 @@ namespace Datos
                 {
                     while (reader.Read())
                     {
-                        /*
+                        
                         Embalaje embalaje = new Embalaje();
                         embalaje.RefEmbalaje = reader.GetString(0);
                         embalaje.Empaque = new Empaque();
-                        embalaje.Empaque.RefProducto = reader.GetString(1);
-                        embalaje.Producto.NombreProducto = reader.GetString(2);
-                        embalaje.Producto.PesoProducto = decimal.Parse(reader.GetString(3));
-                        embalaje.Producto.PrecioProducto = decimal.Parse(reader.GetString(4));
-                        empaque.Largo = decimal.Parse(reader.GetString(5));
-                        empaque.Ancho = decimal.Parse(reader.GetString(6));
-                        empaque.Alto = decimal.Parse(reader.GetString(7));
-                        empaque.PesoEmpaque = decimal.Parse(reader.GetString(8));
-                        empaque.CantidadProductos = int.Parse(reader.GetString(9));
-                        empaque.PrecioProdxCantProd = decimal.Parse(reader.GetString(10));
-                        empaque.PesoEmpaquexPesoProducto = decimal.Parse(reader.GetString(11));
+                        embalaje.Empaque.RefEmpaque = reader.GetString(1);
+                        embalaje.Largo= decimal.Parse(reader.GetString(2));
+                        embalaje.Ancho= decimal.Parse(reader.GetString(3));
+                        embalaje.Alto = decimal.Parse(reader.GetString(4));
+                        embalaje.EmpProdXLargo = decimal.Parse(reader.GetString(5));
+                        embalaje.EmpProdXAncho = decimal.Parse(reader.GetString(6));
+                        embalaje.EmpProdXAlto = decimal.Parse(reader.GetString(7));
+                        embalaje.TotalEmpPrimarioXEmbalaje = decimal.Parse(reader.GetString(8));
 
-                        return empaque;
-                        */
+
+                        return embalaje;
+                        
                     }
                 }
                 reader.Close();
@@ -76,71 +74,65 @@ namespace Datos
             return null;
         }
 
-        public void EliminarEmbalajeRep(string refempaque)
+        public void EliminarEmbalajeRep(string refembalaje)
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "delete From Empaque where RefEmpaque=@RefEmpaque";
-                command.Parameters.Add(new SqlParameter("@RefEmpaque", refempaque));
+                command.CommandText = "delete From Embalaje where RefEmbalaje=@RefEmbalaje";
+                command.Parameters.Add(new SqlParameter("@RefEmbalaje", refembalaje));
                 command.ExecuteNonQuery();
             }
         }
-        /*
+        
         public void ModificarEmbalaje(Embalaje embalajeNuevo, string refembalaje)
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "update Empaque set RefEmpaque=@RefEmpaque,RefProducto=@RefProducto,Producto=@Producto,PesoProducto=@PesoProducto, PrecioProducto=@PrecioProducto, Largo=@Largo, Ancho=@Ancho, Alto=@Alto, PesoEmpaque=@PesoEmpaque, CantProductos=@CantProductos, PrecioProdXCantProdEmpaque=@PrecioProdXCantProdEmpaque, PesoEmpaqXPesoProducto=@PesoEmpaqXPesoProducto" +
-                    " where RefProducto=@RefProducto";
+                command.CommandText = "update Embalaje set RefEmbalaje=@RefEmbalaje, RefEmpaque=@RefEmpaque, Largo=@Largo, Ancho=@Ancho, Alto=@Alto, EmpXLargo=@EmpXLargo, EmpXAncho=@EmpXAncho, EmpXAlto=@EmpXAlto, TotalEmpaqueXEmbalaje=@TotalEmpaqueXEmbalaje" +
+                    " where RefEmbalaje=@RefEmbalaje";
 
-                command.Parameters.Add(new SqlParameter("@RefEmpaque", refempaque));
-                command.Parameters.Add(new SqlParameter("@RefProducto", empaqueNuevo.Producto.RefProducto));
-                command.Parameters.Add(new SqlParameter("@Producto", empaqueNuevo.Producto.NombreProducto));
-                command.Parameters.Add(new SqlParameter("@PesoProducto", empaqueNuevo.Producto.PesoProducto));
-                command.Parameters.Add(new SqlParameter("@PrecioProducto", empaqueNuevo.Producto.PrecioProducto));
-                command.Parameters.Add(new SqlParameter("@Largo", empaqueNuevo.Largo));
-                command.Parameters.Add(new SqlParameter("@Ancho", empaqueNuevo.Ancho));
-                command.Parameters.Add(new SqlParameter("@Alto", empaqueNuevo.Alto));
-                command.Parameters.Add(new SqlParameter("@PesoEmpaque", empaqueNuevo.PesoEmpaque));
-                command.Parameters.Add(new SqlParameter("@CantProductos", empaqueNuevo.CantidadProductos));
-                command.Parameters.Add(new SqlParameter("@PrecioProdXCantProdEmpaque", empaqueNuevo.PrecioProdxCantProd));
-                command.Parameters.Add(new SqlParameter("@PesoEmpaqXPesoProducto", empaqueNuevo.PesoEmpaquexPesoProducto));
+                command.Parameters.Add(new SqlParameter("@RefEmbalaje", refembalaje));
+                command.Parameters.Add(new SqlParameter("@RefEmpaque", embalajeNuevo.Empaque.RefEmpaque));;
+                command.Parameters.Add(new SqlParameter("@Largo", embalajeNuevo.Largo));
+                command.Parameters.Add(new SqlParameter("@Ancho", embalajeNuevo.Ancho));
+                command.Parameters.Add(new SqlParameter("@Alto", embalajeNuevo.Alto));
+                command.Parameters.Add(new SqlParameter("@EmpXLargo", embalajeNuevo.EmpProdXLargo));
+                command.Parameters.Add(new SqlParameter("@EmpXAncho", embalajeNuevo.EmpProdXAncho));
+                command.Parameters.Add(new SqlParameter("@EmpXAlto", embalajeNuevo.EmpProdXAlto));
+                command.Parameters.Add(new SqlParameter("@TotalEmpaqueXEmbalaje", embalajeNuevo.TotalEmpPrimarioXEmbalaje));
 
                 command.ExecuteNonQuery();
             }
         }
-        */
-        public List<Empaque> ConsultarTodosLosEmpaques(string refempaque)
+        
+        public List<Embalaje> ConsultarTodosLosEmbalajes(string refembalaje)
         {
-            List<Empaque> empaques = new List<Empaque>();
+            List<Embalaje> embalajes = new List<Embalaje>();
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "select * from Empaque where RefEmpaque=@RefEmpaque";
-                command.Parameters.Add(new SqlParameter("@RefEmpaque", refempaque));
+                command.CommandText = "select * from Embalaje where RefEmbalaje=@RefEmbalaje";
+                command.Parameters.Add(new SqlParameter("@RefEmbalaje", refembalaje));
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    Empaque empaque = new Empaque();
-                    empaque.RefEmpaque = reader.GetString(0);
-                    empaque.Producto = new Producto();
-                    empaque.Producto.RefProducto = reader.GetString(1);
-                    empaque.Producto.NombreProducto = reader.GetString(2);
-                    empaque.Producto.PesoProducto = double.Parse(reader.GetString(3));
-                    empaque.Producto.PrecioProducto = double.Parse(reader.GetString(4));
-                    empaque.Largo = decimal.Parse(reader.GetString(5));
-                    empaque.Ancho = decimal.Parse(reader.GetString(6));
-                    empaque.Alto = decimal.Parse(reader.GetString(7));
-                    empaque.PesoEmpaque = decimal.Parse(reader.GetString(8));
-                    empaque.CantidadProductos = int.Parse(reader.GetString(9));
-                    empaque.PrecioProdxCantProd = decimal.Parse(reader.GetString(10));
-                    empaque.PesoEmpaquexPesoProducto = decimal.Parse(reader.GetString(11));
+                    Embalaje embalaje = new Embalaje();
+                    embalaje.RefEmbalaje = reader.GetString(0);
+                    embalaje.Empaque = new Empaque();
+                    embalaje.Empaque.RefEmpaque = reader.GetString(1);
+                    embalaje.Largo = decimal.Parse(reader.GetString(2));
+                    embalaje.Ancho = decimal.Parse(reader.GetString(3));
+                    embalaje.Alto = decimal.Parse(reader.GetString(4));
+                    embalaje.EmpProdXLargo = decimal.Parse(reader.GetString(5));
+                    embalaje.EmpProdXAncho = decimal.Parse(reader.GetString(6));
+                    embalaje.EmpProdXAlto = decimal.Parse(reader.GetString(7));
+                    embalaje.TotalEmpPrimarioXEmbalaje = decimal.Parse(reader.GetString(8));
 
-                    empaques.Add(empaque);
+                    embalajes.Add(embalaje);
                 }
                 reader.Close();
             }
 
-            return empaques;
+            return embalajes;
         }
     }
 }

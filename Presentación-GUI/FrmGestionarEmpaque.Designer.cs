@@ -329,6 +329,7 @@ namespace Presentación_GUI
             this.BtnActEmpaque.TabIndex = 27;
             this.BtnActEmpaque.Text = "Actualizar";
             this.BtnActEmpaque.UseVisualStyleBackColor = false;
+            this.BtnActEmpaque.Click += new System.EventHandler(this.BtnActEmpaque_Click);
             // 
             // BtnEditarEmpaque
             // 

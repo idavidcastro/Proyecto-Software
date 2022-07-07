@@ -46,18 +46,18 @@ namespace Lógica
             }
 
         }
-        /*
-        public string EliminarEmbalaje(string refembalaje)
+        
+        public string EliminarEstibado(string refestibado)
         {
             try
             {
                 connectionManager.Open();
-                if (embalajeRepository.BuscarEmbalajePorRef(refembalaje) != null)
+                if (estibadoRepository.BuscarEstibadoPorRef(refestibado) != null)
                 {
-                    embalajeRepository.EliminarEmbalajeRep(refembalaje);
-                    return $"Se eliminó el embalaje con la referencia {refembalaje}";
+                    estibadoRepository.EliminarEstibadoRep(refestibado);
+                    return $"Se eliminó el estibado con la referencia {refestibado}";
                 }
-                return $"No se encontró el embalaje con referencia {refembalaje}";
+                return $"No se encontró el estibado con referencia {refestibado}";
             }
             catch (Exception exception)
             {
@@ -70,19 +70,19 @@ namespace Lógica
             }
         }
         
-        public string ModificarEmbalaje(Embalaje embalajeNuevo, string refembalaje)
+        public string ModificarEstibado(Estibado estibadeNuevo, string refestibado)
         {
 
             try
             {
                 connectionManager.Open();
 
-                if (embalajeRepository.BuscarEmbalajePorRef(refembalaje) != null)
+                if (estibadoRepository.BuscarEstibadoPorRef(refestibado) != null)
                 {
-                    embalajeRepository.ModificarEmbalaje(embalajeNuevo, refembalaje);
-                    return $"Se modificó el embalaje con la referencia {refembalaje}";
+                    estibadoRepository.ModificarEstibado(estibadeNuevo, refestibado);
+                    return $"Se modificó el estibado con la referencia {refestibado}";
                 }
-                return $"No se encontró el embalaje con la referencia {refembalaje}";
+                return $"No se encontró el estibado con la referencia {refestibado}";
             }
             catch (Exception exception)
             {
@@ -95,17 +95,17 @@ namespace Lógica
             }
         }
         
-        public ConsultaReponseEmbalaje ConsultarListEmbalaje(string refempaque)
+        public ConsultaReponseEstibado ConsultarListEstibado(string refestibado)
         {
             try
             {
                 connectionManager.Open();
 
-                return new ConsultaReponseEmbalaje(embalajeRepository.ConsultarTodosLosEmbalajes(refempaque));
+                return new ConsultaReponseEstibado(estibadoRepository.ConsultarTodosLosEstibado(refestibado));
             }
             catch (Exception exception)
             {
-                return new ConsultaReponseEmbalaje("Se presentó el siguiente error: " + exception.Message);
+                return new ConsultaReponseEstibado("Se presentó el siguiente error: " + exception.Message);
             }
             finally
             {
@@ -113,25 +113,25 @@ namespace Lógica
             }
         }
         
-        public BusquedaReponseEmbalaje BuscarEmbalaje(string refembalaje)
+        public BusquedaReponseEstibado BuscarEstibado(string refestibado)
         {
             try
             {
                 connectionManager.Open();
-                if (embalajeRepository.BuscarEmbalajePorRef(refembalaje) == null)
+                if (estibadoRepository.BuscarEstibadoPorRef(refestibado) == null)
                 {
-                    return new BusquedaReponseEmbalaje($"El embalaje con la referencia {refembalaje} NO se encuentra registrado");
+                    return new BusquedaReponseEstibado($"El estibado con la referencia {refestibado} NO se encuentra registrado");
 
                 }
                 else
                 {
-                    return new BusquedaReponseEmbalaje(embalajeRepository.BuscarEmbalajePorRef(refembalaje));
+                    return new BusquedaReponseEstibado(estibadoRepository.BuscarEstibadoPorRef(refestibado));
                 }
             }
             catch (Exception exception)
             {
 
-                return new BusquedaReponseEmbalaje("Se presentó el siguiente error: " + exception.Message);
+                return new BusquedaReponseEstibado("Se presentó el siguiente error: " + exception.Message);
             }
             finally
             {
@@ -139,46 +139,46 @@ namespace Lógica
             }
 
         }
-        */
+        
     }
-    /*
-    public class ConsultaReponseEmbalaje
+    
+    public class ConsultaReponseEstibado
     {
-        public List<Embalaje> Embalajes { get; set; }
+        public List<Estibado> Estibados { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public ConsultaReponseEmbalaje(List<Embalaje> embalajes)
+        public ConsultaReponseEstibado(List<Estibado> estibados)
         {
-            Embalajes = embalajes;
+            Estibados = estibados;
             Error = false;
         }
 
-        public ConsultaReponseEmbalaje(string mensaje)
+        public ConsultaReponseEstibado(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;
         }
 
     }
-    public class BusquedaReponseEmbalaje
+    public class BusquedaReponseEstibado
     {
-        public Embalaje Embalaje { get; set; }
+        public Estibado Estibado { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public BusquedaReponseEmbalaje(Embalaje embalaje)
+        public BusquedaReponseEstibado(Estibado estibado)
         {
-            Embalaje = embalaje;
+            Estibado=estibado;
             Error = false;
         }
 
-        public BusquedaReponseEmbalaje(string mensaje)
+        public BusquedaReponseEstibado(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;
         }
 
     }
-    */
+    
 }

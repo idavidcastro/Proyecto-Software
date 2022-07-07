@@ -25,6 +25,7 @@ namespace Presentación_GUI
             InitializeComponent();
             estibadoService = new EstibadoService(ConfigConnectionString.Cadena);
             MostrarEmbalaje();
+            MostrarEstibado();
         }
         private void MostrarEmbalaje()
         {
@@ -36,6 +37,20 @@ namespace Presentación_GUI
             while (reader.Read())
             {
                 CmbRefEmbalajeEnEstibado.Items.Add(reader.GetString(0));
+            }
+            cn.Close();
+        }
+        private void MostrarEstibado()
+        {
+            SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
+            SqlCommand cm = new SqlCommand("select *from Estibado", cn);
+            cn.Open();
+            SqlDataReader reader = cm.ExecuteReader()
+;
+            while (reader.Read())
+            {
+                CmbReferenciaConsultaEstibado.Items.Add(reader.GetString(0));
+                CmbReferenciaEstibado.Items.Add(reader.GetString(0));
             }
             cn.Close();
         }
@@ -165,6 +180,103 @@ namespace Presentación_GUI
         private void TxtAltoEstibado_Leave(object sender, EventArgs e)
         {
             Calculos();
+        }
+
+        private void BtnConsultarEstibado_Click(object sender, EventArgs e)
+        {
+            ConsultaReponseEstibado respuesta;
+            dataGridViewConsultaEstibado.DataSource = null;
+
+            respuesta = estibadoService.ConsultarListEstibado(CmbReferenciaConsultaEstibado.Text);
+
+            if (respuesta.Error)
+            {
+                MessageBox.Show(respuesta.Mensaje);
+            }
+            else
+            {
+                dataGridViewConsultaEstibado.DataSource = respuesta.Estibados;
+            }
+        }
+
+        private void BtnEditarEstibado_Click(object sender, EventArgs e)
+        {
+            BusquedaReponseEstibado respuesta;
+
+            respuesta = estibadoService.BuscarEstibado(CmbReferenciaEstibado.Text);
+
+            if (respuesta.Error)
+            {
+                MessageBox.Show(respuesta.Mensaje);
+            }
+            else
+            {
+                TxtRefEstibado.Text = respuesta.Estibado.RefEstibado;
+                CmbRefEmbalajeEnEstibado.Text = respuesta.Estibado.Embalaje.RefEmbalaje;
+                TxtLargoEstibado.Text = respuesta.Estibado.LargoEstibado.ToString();
+                TxtAnchoEstibado.Text = respuesta.Estibado.AnchoEstibado.ToString();
+                TxtAltoEstibado.Text = respuesta.Estibado.AltoEstibado.ToString();
+                LabelEmbalajeXLargo.Text = respuesta.Estibado.EmbalajeXLargo.ToString();
+                LabelEmbalajeXAncho.Text = respuesta.Estibado.EmbalajeXAncho.ToString();
+                LabelEmbalajeXAlto.Text = respuesta.Estibado.EmbalajeXAlto.ToString();
+                LabelTotalEmbalajesXEstibas.Text = respuesta.Estibado.TotalEmbalajesXEstibas.ToString();
+
+
+
+            }
+        }
+
+        private void BtnActEstibado_Click(object sender, EventArgs e)
+        {
+            
+            //
+            producto = new Producto();
+            producto.RefProducto = TxtRefProducto.Text;
+            producto.NombreProducto = TxtNombProd.Text;
+            producto.PesoProducto = double.Parse(TxtPesoProd.Text);
+            producto.PrecioProducto = double.Parse(TxtPrecioProd.Text);
+
+            empaque = new Empaque();
+            empaque.RefEmpaque = TxtEmpaqueEnEmbalaje.Text;
+            empaque.Producto = producto;
+            empaque.Largo = decimal.Parse(TxtLargo.Text);
+            empaque.Ancho = decimal.Parse(TxtAncho.Text);
+            empaque.Alto = decimal.Parse(TxtAlto.Text);
+            empaque.PesoEmpaque = decimal.Parse(TxtPesoEmpaque.Text);
+            empaque.CantidadProductos = int.Parse(TxtCantProd.Text);
+            empaque.PrecioProdxCantProd = decimal.Parse(TxtPrecioProdX.Text);
+            ; empaque.PesoEmpaquexPesoProducto = decimal.Parse(TxtPesoEmpaqueX.Text);
+
+            embalaje = new Embalaje();
+            embalaje.RefEmbalaje = CmbRefEmbalajeEnEstibado.Text;
+            embalaje.Empaque = empaque;
+            embalaje.Largo = decimal.Parse(TxtLargoEmbalaje.Text);
+            embalaje.Ancho = decimal.Parse(TxtAnchoEmbalaje.Text);
+            embalaje.Alto = decimal.Parse(TxtAltoEmbalaje.Text);
+            embalaje.EmpProdXLargo = decimal.Parse(TxtProductoXLargo.Text);
+            embalaje.EmpProdXAncho = decimal.Parse(TxtProductoXAncho.Text);
+            embalaje.EmpProdXAlto = decimal.Parse(TxtProductoXAlto.Text);
+            embalaje.TotalEmpPrimarioXEmbalaje = decimal.Parse(TxtTotalEmpPrimXEmbalaje.Text);
+
+            estibado = new Estibado();
+            estibado.RefEstibado = TxtRefEstibado.Text;
+            estibado.Embalaje = embalaje;
+            estibado.LargoEstibado = decimal.Parse(TxtLargoEstibado.Text);
+            estibado.AnchoEstibado = decimal.Parse(TxtAnchoEstibado.Text);
+            estibado.AltoEstibado = decimal.Parse(TxtAltoEstibado.Text);
+            estibado.EmbalajeXLargo = decimal.Parse(LabelEmbalajeXLargo.Text);
+            estibado.EmbalajeXAncho = decimal.Parse(LabelEmbalajeXAncho.Text);
+            estibado.EmbalajeXAlto = decimal.Parse(LabelEmbalajeXAlto.Text);
+            estibado.TotalEmbalajesXEstibas = decimal.Parse(LabelTotalEmbalajesXEstibas.Text);
+
+            string mensaje = estibadoService.ModificarEstibado(estibado, TxtRefEstibado.Text);
+            MessageBox.Show(mensaje, "Modificar estibado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtnEliminarEstibado_Click(object sender, EventArgs e)
+        {
+            string mensaje = estibadoService.EliminarEstibado(CmbReferenciaEstibado.Text);
+            MessageBox.Show(mensaje, "Eliminar estibado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

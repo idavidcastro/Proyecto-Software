@@ -29,11 +29,11 @@ namespace Presentación_GUI
             ordenService = new OrdenService(ConfigConnectionString.Cadena);
             MostrarContenedores();
             MostrarOrdenes();
-            
+            /*
             DataOrdenes.Columns.Add("RefOrden", "RefOrden");
             DataOrdenes.Columns.Add("RefContenedor", "RefContenedor");
             DataOrdenes.Columns.Add("ValorCarga", "ValorCarga");
-            
+            */
         }
         private void MostrarContenedores()
         {
@@ -305,7 +305,22 @@ namespace Presentación_GUI
 
         private void BtnConsultarOrdenPanel_Click(object sender, EventArgs e)
         {
-            
+
+            ConsultaReponseOrden respuesta;
+            DataOrdenes.DataSource = null;
+
+            respuesta = ordenService.ConsultarListOrden(CmbRefOrdenConsultar.Text);
+
+            if (respuesta.Error)
+            {
+                MessageBox.Show(respuesta.Mensaje);
+            }
+            else
+            {
+                DataOrdenes.DataSource = respuesta.Ordenes;
+            }
+
+            /*
 
             
             SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
@@ -321,7 +336,7 @@ namespace Presentación_GUI
             }
             
             cn.Close();
-            
+            */
         }
 
         private void PanelConsultarOrden_Paint(object sender, PaintEventArgs e)

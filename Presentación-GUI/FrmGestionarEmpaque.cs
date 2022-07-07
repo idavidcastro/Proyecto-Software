@@ -29,18 +29,6 @@ namespace Presentación_GUI
             productoService = new ProductoService(ConfigConnectionString.Cadena);
             MostrarProductos();
             MostrarEmpaques();
-            dataGridViewConsultaEmpaque.Columns.Add("RefEmpaque", "RefEmpaque");
-            dataGridViewConsultaEmpaque.Columns.Add("RefProducto", "RefProducto");
-            dataGridViewConsultaEmpaque.Columns.Add("Producto", "Producto");
-            dataGridViewConsultaEmpaque.Columns.Add("PesoProducto", "PesoProducto");
-            dataGridViewConsultaEmpaque.Columns.Add("PrecioProducto", "PrecioProducto");
-            dataGridViewConsultaEmpaque.Columns.Add("Largo", "Largo");
-            dataGridViewConsultaEmpaque.Columns.Add("Ancho", "Ancho");
-            dataGridViewConsultaEmpaque.Columns.Add("Alto", "Alto");
-            dataGridViewConsultaEmpaque.Columns.Add("PesoEmpaque", "PesoEmpaque");
-            dataGridViewConsultaEmpaque.Columns.Add("CantProductos", "CantProductos");
-            dataGridViewConsultaEmpaque.Columns.Add("PrecioProdXCantProdEmpaque", "PrecioProdXCantProdEmpaque");
-            dataGridViewConsultaEmpaque.Columns.Add("PesoEmpaqXPesoProducto", "PesoEmpaqXPesoProducto");
 
             
         }
@@ -227,55 +215,80 @@ namespace Presentación_GUI
 
         private void BtnEditarEmpaque_Click(object sender, EventArgs e)
         {
-            SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
-            cn.Open();
+            BusquedaReponseEmpaque respuesta;
 
+            respuesta = empaqueService.BuscarEmpaque(CmbReferenciaEmpaque.Text);
 
-            SqlCommand cmmmm = new SqlCommand("select * from Empaque where RefEmpaque= '" + CmbReferenciaEmpaque.Text + "'", cn);
-            SqlDataReader readerrrr = cmmmm.ExecuteReader();
-            if (readerrrr.Read() == true)
+            if (respuesta.Error)
             {
-                TxtRefEmpaque.Text = readerrrr["RefEmpaque"].ToString();
-                CmbProductos.Text= readerrrr["Producto"].ToString();
-                TxtPesoProducto.Text = readerrrr["PesoProducto"].ToString();
-                TxtPrecioProducto.Text = readerrrr["PrecioProduto"].ToString();
-                TxtLargoEmpaque.Text = readerrrr["Largo"].ToString();
-                TxtAnchoEmpaque.Text = readerrrr["Ancho"].ToString();
-                TxtAltoEmpaque.Text = readerrrr["Alto"].ToString();
-                TxtPesoEmpaque.Text = readerrrr["PesoEmpaque"].ToString();
-                TxtCantProdEmpaqP.Text = readerrrr["CantProductos"].ToString();
-                LabelPrecioPrdXCantProEmpaqPri.Text = readerrrr["PrecioProdXCantProdEmpaque"].ToString();
-                LabelPesoEmpaqXPesoProdEmpaqPri.Text = readerrrr["PesoEmpaqXPesoProducto"].ToString();
-                /*
-                    readerrrr["RefContenedor"].ToString(), readerrrr["ValorCarga"].ToString());
-                readerrrr.Close();
-                */
+                MessageBox.Show(respuesta.Mensaje);
             }
+            else
+            {
+                TxtRefEmpaque.Text = respuesta.Empaque.RefEmpaque;
+                CmbProductos.Text = respuesta.Empaque.Producto.NombreProducto;
+                TxtPesoProducto.Text = respuesta.Empaque.Producto.PesoProducto.ToString();
+                TxtPrecioProducto.Text = respuesta.Empaque.Producto.PrecioProducto.ToString();
+                TxtLargoEmpaque.Text = respuesta.Empaque.Largo.ToString();
+                TxtAnchoEmpaque.Text = respuesta.Empaque.Ancho.ToString();
+                TxtAltoEmpaque.Text = respuesta.Empaque.Alto.ToString();
+                TxtPesoEmpaque.Text = respuesta.Empaque.PesoEmpaque.ToString();
+                TxtCantProdEmpaqP.Text = respuesta.Empaque.CantidadProductos.ToString();
+                LabelPrecioPrdXCantProEmpaqPri.Text = respuesta.Empaque.PrecioProdxCantProd.ToString();
+                LabelPesoEmpaqXPesoProdEmpaqPri.Text = respuesta.Empaque.PesoEmpaquexPesoProducto.ToString();
 
-            cn.Close();
+            }
         }
 
         private void BtnConsultarEmpaque_Click(object sender, EventArgs e)
         {
-            SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
-            cn.Open();
+            ConsultaReponseEmpaque respuesta;
+            dataGridViewConsultaEmpaque.DataSource = null;
 
+            respuesta = empaqueService.ConsultarListEmpaques(CmbReferenciaConsultaEmpaque.Text);
 
-            SqlCommand cmmmm = new SqlCommand("select * from Empaque where RefEmpaque= '" + CmbReferenciaConsultaEmpaque.Text + "'", cn);
-            SqlDataReader readerrrr = cmmmm.ExecuteReader();
-            if (readerrrr.Read() == true)
+            if (respuesta.Error)
             {
-
-                dataGridViewConsultaEmpaque.Rows.Add(readerrrr["RefEmpaque"].ToString(), readerrrr["RefProducto"].ToString(), readerrrr["Producto"].ToString(), readerrrr["PesoProducto"].ToString(), readerrrr["PrecioProduto"].ToString(), readerrrr["Largo"].ToString(),
-                    readerrrr["Ancho"].ToString(), readerrrr["Alto"].ToString(), readerrrr["PesoEmpaque"].ToString(), readerrrr["CantProductos"].ToString(), readerrrr["PrecioProdXCantProdEmpaque"].ToString(), readerrrr["PesoEmpaqXPesoProducto"].ToString());
+                MessageBox.Show(respuesta.Mensaje);
             }
-
-            cn.Close();
+            else
+            {
+                dataGridViewConsultaEmpaque.DataSource = respuesta.Empaques;
+            }
         }
 
         private void BtnEliminarEmpaque_Click(object sender, EventArgs e)
         {
+            string mensaje = empaqueService.EliminarEmpaque(CmbReferenciaEmpaque.Text);
+            MessageBox.Show(mensaje, "Eliminar empaque", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtnActEmpaque_Click(object sender, EventArgs e)
+        {
             
+            //
+            empaque = new Empaque();
+            producto = new Producto();
+
+            producto.RefProducto = TxtRefProducto.Text;
+            producto.NombreProducto = CmbProductos.Text;
+            producto.PesoProducto = double.Parse(TxtPesoProducto.Text);
+            producto.PrecioProducto = double.Parse(TxtPrecioProducto.Text);
+
+
+            empaque.RefEmpaque = TxtRefEmpaque.Text;
+            empaque.Producto = producto;
+            empaque.Largo = decimal.Parse(TxtLargoEmpaque.Text);
+            empaque.Ancho = decimal.Parse(TxtAnchoEmpaque.Text);
+            empaque.Alto = decimal.Parse(TxtAltoEmpaque.Text);
+            empaque.PesoEmpaque = decimal.Parse(TxtPesoEmpaque.Text);
+            empaque.CantidadProductos = int.Parse(TxtCantProdEmpaqP.Text);
+
+            empaque.PrecioProdxCantProd = decimal.Parse(LabelPrecioPrdXCantProEmpaqPri.Text);
+            empaque.PesoEmpaquexPesoProducto = decimal.Parse(LabelPesoEmpaqXPesoProdEmpaqPri.Text);
+
+            string mensaje = empaqueService.ModificarEmpaque(empaque, TxtRefEmpaque.Text);
+            MessageBox.Show(mensaje, "Modificar empaque", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

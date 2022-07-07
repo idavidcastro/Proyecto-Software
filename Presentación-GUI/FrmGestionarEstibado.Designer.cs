@@ -153,6 +153,7 @@ namespace Presentación_GUI
             this.BtnConsultarEstibado.TabIndex = 96;
             this.BtnConsultarEstibado.Text = "Consultar";
             this.BtnConsultarEstibado.UseVisualStyleBackColor = false;
+            this.BtnConsultarEstibado.Click += new System.EventHandler(this.BtnConsultarEstibado_Click);
             // 
             // CmbReferenciaConsultaEstibado
             // 
@@ -201,6 +202,7 @@ namespace Presentación_GUI
             this.BtnEditarEstibado.TabIndex = 91;
             this.BtnEditarEstibado.Text = "Editar";
             this.BtnEditarEstibado.UseVisualStyleBackColor = false;
+            this.BtnEditarEstibado.Click += new System.EventHandler(this.BtnEditarEstibado_Click);
             // 
             // BtnActEstibado
             // 
@@ -213,6 +215,7 @@ namespace Presentación_GUI
             this.BtnActEstibado.TabIndex = 90;
             this.BtnActEstibado.Text = "Actualizar";
             this.BtnActEstibado.UseVisualStyleBackColor = false;
+            this.BtnActEstibado.Click += new System.EventHandler(this.BtnActEstibado_Click);
             // 
             // BtnEliminarEstibado
             // 
@@ -225,6 +228,7 @@ namespace Presentación_GUI
             this.BtnEliminarEstibado.TabIndex = 89;
             this.BtnEliminarEstibado.Text = "Eliminar";
             this.BtnEliminarEstibado.UseVisualStyleBackColor = false;
+            this.BtnEliminarEstibado.Click += new System.EventHandler(this.BtnEliminarEstibado_Click);
             // 
             // panel2
             // 

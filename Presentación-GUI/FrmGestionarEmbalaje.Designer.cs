@@ -148,6 +148,7 @@ namespace Presentación_GUI
             this.BtnEditarEmbalaje.TabIndex = 62;
             this.BtnEditarEmbalaje.Text = "Editar";
             this.BtnEditarEmbalaje.UseVisualStyleBackColor = false;
+            this.BtnEditarEmbalaje.Click += new System.EventHandler(this.BtnEditarEmbalaje_Click);
             // 
             // BtnActEmbalaje
             // 
@@ -160,6 +161,7 @@ namespace Presentación_GUI
             this.BtnActEmbalaje.TabIndex = 61;
             this.BtnActEmbalaje.Text = "Actualizar";
             this.BtnActEmbalaje.UseVisualStyleBackColor = false;
+            this.BtnActEmbalaje.Click += new System.EventHandler(this.BtnActEmbalaje_Click);
             // 
             // BtnEliminarEmbalaje
             // 
@@ -172,6 +174,7 @@ namespace Presentación_GUI
             this.BtnEliminarEmbalaje.TabIndex = 60;
             this.BtnEliminarEmbalaje.Text = "Eliminar";
             this.BtnEliminarEmbalaje.UseVisualStyleBackColor = false;
+            this.BtnEliminarEmbalaje.Click += new System.EventHandler(this.BtnEliminarEmbalaje_Click);
             // 
             // panel2
             // 

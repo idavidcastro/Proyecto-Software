@@ -59,8 +59,7 @@ namespace Presentación_GUI
 
         private void BtnCostoFinal_Click(object sender, EventArgs e)
         {
-            FrmCostoFinal frmCostoFinal = new FrmCostoFinal();
-            MostrarFormulario(frmCostoFinal);
+            
         }
 
         private void BtnVolverGestiones_Click(object sender, EventArgs e)

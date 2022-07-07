@@ -46,18 +46,18 @@ namespace Lógica
             }
 
         }
-        /*
-        public string EliminarEmbalaje(string refembalaje)
+        
+        public string EliminarContenedor(string refcontenedor)
         {
             try
             {
                 connectionManager.Open();
-                if (embalajeRepository.BuscarEmbalajePorRef(refembalaje) != null)
+                if (contenedorRepository.BuscarContenedorPorRef(refcontenedor) != null)
                 {
-                    embalajeRepository.EliminarEmbalajeRep(refembalaje);
-                    return $"Se eliminó el embalaje con la referencia {refembalaje}";
+                    contenedorRepository.EliminarContenedorRep(refcontenedor);
+                    return $"Se eliminó el contenedor con la referencia {refcontenedor}";
                 }
-                return $"No se encontró el embalaje con referencia {refembalaje}";
+                return $"No se encontró el contenedor con referencia {refcontenedor}";
             }
             catch (Exception exception)
             {
@@ -70,19 +70,19 @@ namespace Lógica
             }
         }
         
-        public string ModificarEmbalaje(Embalaje embalajeNuevo, string refembalaje)
+        public string ModificarContenedor(Contenedor contenedorNuevo, string refcontenedor)
         {
 
             try
             {
                 connectionManager.Open();
 
-                if (embalajeRepository.BuscarEmbalajePorRef(refembalaje) != null)
+                if (contenedorRepository.BuscarContenedorPorRef(refcontenedor) != null)
                 {
-                    embalajeRepository.ModificarEmbalaje(embalajeNuevo, refembalaje);
-                    return $"Se modificó el embalaje con la referencia {refembalaje}";
+                    contenedorRepository.ModificarContenedor(contenedorNuevo, refcontenedor);
+                    return $"Se modificó el contenedor con la referencia {refcontenedor}";
                 }
-                return $"No se encontró el embalaje con la referencia {refembalaje}";
+                return $"No se encontró el contenedor con la referencia {refcontenedor}";
             }
             catch (Exception exception)
             {
@@ -95,17 +95,17 @@ namespace Lógica
             }
         }
         
-        public ConsultaReponseEmbalaje ConsultarListEmbalaje(string refempaque)
+        public ConsultaReponseContenedor ConsultarListContenedor(string refcontenedor)
         {
             try
             {
                 connectionManager.Open();
 
-                return new ConsultaReponseEmbalaje(embalajeRepository.ConsultarTodosLosEmbalajes(refempaque));
+                return new ConsultaReponseContenedor(contenedorRepository.ConsultarTodosLosContenedores(refcontenedor));
             }
             catch (Exception exception)
             {
-                return new ConsultaReponseEmbalaje("Se presentó el siguiente error: " + exception.Message);
+                return new ConsultaReponseContenedor("Se presentó el siguiente error: " + exception.Message);
             }
             finally
             {
@@ -113,25 +113,25 @@ namespace Lógica
             }
         }
         
-        public BusquedaReponseEmbalaje BuscarEmbalaje(string refembalaje)
+        public BusquedaReponseContenedor BuscarContenedor(string refcontenedor)
         {
             try
             {
                 connectionManager.Open();
-                if (embalajeRepository.BuscarEmbalajePorRef(refembalaje) == null)
+                if (contenedorRepository.BuscarContenedorPorRef(refcontenedor) == null)
                 {
-                    return new BusquedaReponseEmbalaje($"El embalaje con la referencia {refembalaje} NO se encuentra registrado");
+                    return new BusquedaReponseContenedor($"El contenedor con la referencia {refcontenedor} NO se encuentra registrado");
 
                 }
                 else
                 {
-                    return new BusquedaReponseEmbalaje(embalajeRepository.BuscarEmbalajePorRef(refembalaje));
+                    return new BusquedaReponseContenedor(contenedorRepository.BuscarContenedorPorRef(refcontenedor));
                 }
             }
             catch (Exception exception)
             {
 
-                return new BusquedaReponseEmbalaje("Se presentó el siguiente error: " + exception.Message);
+                return new BusquedaReponseContenedor("Se presentó el siguiente error: " + exception.Message);
             }
             finally
             {
@@ -139,46 +139,46 @@ namespace Lógica
             }
 
         }
-        */
+        
     }
-    /*
-    public class ConsultaReponseEmbalaje
+    
+    public class ConsultaReponseContenedor
     {
-        public List<Embalaje> Embalajes { get; set; }
+        public List<Contenedor> Contenedores { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public ConsultaReponseEmbalaje(List<Embalaje> embalajes)
+        public ConsultaReponseContenedor(List<Contenedor> contenedores)
         {
-            Embalajes = embalajes;
+            Contenedores = contenedores;
             Error = false;
         }
 
-        public ConsultaReponseEmbalaje(string mensaje)
+        public ConsultaReponseContenedor(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;
         }
 
     }
-    public class BusquedaReponseEmbalaje
+    public class BusquedaReponseContenedor
     {
-        public Embalaje Embalaje { get; set; }
+        public Contenedor Contenedor { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public BusquedaReponseEmbalaje(Embalaje embalaje)
+        public BusquedaReponseContenedor(Contenedor contenedor)
         {
-            Embalaje = embalaje;
+            Contenedor = contenedor;
             Error = false;
         }
 
-        public BusquedaReponseEmbalaje(string mensaje)
+        public BusquedaReponseContenedor(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;
         }
 
     }
-    */
+    
 }

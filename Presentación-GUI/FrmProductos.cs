@@ -118,7 +118,7 @@ namespace Presentación_GUI
 
         private void BtnEditarProducto_Click(object sender, EventArgs e)
         {
-            /*
+            
             BusquedaReponse respuesta;
 
             respuesta = productoService.BuscarProducto(CmbReferenciaProducto.Text);
@@ -135,7 +135,7 @@ namespace Presentación_GUI
                 TxtPrecioProducto.Text = respuesta.Producto.PrecioProducto.ToString();
 
             }
-            */
+            /*
             SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
             cn.Open();
             SqlCommand cm = new SqlCommand("select * from Producto where RefProducto= '" + CmbReferenciaProducto.Text + "'", cn);
@@ -151,7 +151,7 @@ namespace Presentación_GUI
             }
             cn.Close();
             ValidarCampos();
-
+            */
         }
 
         private void BtnActProducto_Click(object sender, EventArgs e)

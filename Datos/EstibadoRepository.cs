@@ -73,71 +73,65 @@ namespace Datos
             return null;
         }
 
-        public void EliminarEmbalajeRep(string refempaque)
+        public void EliminarEstibadoRep(string refestibado)
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "delete From Empaque where RefEmpaque=@RefEmpaque";
-                command.Parameters.Add(new SqlParameter("@RefEmpaque", refempaque));
+                command.CommandText = "delete From Estibado where RefEstibado=@RefEstibado";
+                command.Parameters.Add(new SqlParameter("@RefEstibado", refestibado));
                 command.ExecuteNonQuery();
             }
         }
-        /*
-        public void ModificarEmbalaje(Embalaje embalajeNuevo, string refembalaje)
+        
+        public void ModificarEstibado(Estibado estibadoNuevo, string refestibado)
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "update Empaque set RefEmpaque=@RefEmpaque,RefProducto=@RefProducto,Producto=@Producto,PesoProducto=@PesoProducto, PrecioProducto=@PrecioProducto, Largo=@Largo, Ancho=@Ancho, Alto=@Alto, PesoEmpaque=@PesoEmpaque, CantProductos=@CantProductos, PrecioProdXCantProdEmpaque=@PrecioProdXCantProdEmpaque, PesoEmpaqXPesoProducto=@PesoEmpaqXPesoProducto" +
-                    " where RefProducto=@RefProducto";
+                command.CommandText = "update Estibado set RefEstibado=@RefEstibado, RefEmbalaje=@RefEmbalaje, Largo=@Largo, Ancho=@Ancho, Alto=@Alto, EmbalajeXLargo=@EmbalajeXLargo, EmbalajeXAncho=@EmbalajeXAncho, EmbalajeXAlto=@EmbalajeXAlto, TotalEmbalajesXEstibas=@TotalEmbalajesXEstibas" +
+                    " where RefEstibado=@RefEstibado";
 
-                command.Parameters.Add(new SqlParameter("@RefEmpaque", refempaque));
-                command.Parameters.Add(new SqlParameter("@RefProducto", empaqueNuevo.Producto.RefProducto));
-                command.Parameters.Add(new SqlParameter("@Producto", empaqueNuevo.Producto.NombreProducto));
-                command.Parameters.Add(new SqlParameter("@PesoProducto", empaqueNuevo.Producto.PesoProducto));
-                command.Parameters.Add(new SqlParameter("@PrecioProducto", empaqueNuevo.Producto.PrecioProducto));
-                command.Parameters.Add(new SqlParameter("@Largo", empaqueNuevo.Largo));
-                command.Parameters.Add(new SqlParameter("@Ancho", empaqueNuevo.Ancho));
-                command.Parameters.Add(new SqlParameter("@Alto", empaqueNuevo.Alto));
-                command.Parameters.Add(new SqlParameter("@PesoEmpaque", empaqueNuevo.PesoEmpaque));
-                command.Parameters.Add(new SqlParameter("@CantProductos", empaqueNuevo.CantidadProductos));
-                command.Parameters.Add(new SqlParameter("@PrecioProdXCantProdEmpaque", empaqueNuevo.PrecioProdxCantProd));
-                command.Parameters.Add(new SqlParameter("@PesoEmpaqXPesoProducto", empaqueNuevo.PesoEmpaquexPesoProducto));
+                command.Parameters.Add(new SqlParameter("@RefEstibado", refestibado));
+                command.Parameters.Add(new SqlParameter("@RefEmbalaje", estibadoNuevo.Embalaje.RefEmbalaje));
+                command.Parameters.Add(new SqlParameter("@Largo", estibadoNuevo.LargoEstibado));
+                command.Parameters.Add(new SqlParameter("@Ancho", estibadoNuevo.AnchoEstibado));
+                command.Parameters.Add(new SqlParameter("@Alto", estibadoNuevo.AltoEstibado));
+                command.Parameters.Add(new SqlParameter("@EmbalajeXLargo", estibadoNuevo.EmbalajeXLargo));
+                command.Parameters.Add(new SqlParameter("@EmbalajeXAncho", estibadoNuevo.EmbalajeXAncho));
+                command.Parameters.Add(new SqlParameter("@EmbalajeXAlto", estibadoNuevo.EmbalajeXAlto));
+                command.Parameters.Add(new SqlParameter("@TotalEmbalajesXEstibas", estibadoNuevo.TotalEmbalajesXEstibas));
 
                 command.ExecuteNonQuery();
             }
         }
-        */
-        public List<Empaque> ConsultarTodosLosEmpaques(string refempaque)
+        
+        public List<Estibado> ConsultarTodosLosEstibado(string refestibado)
         {
-            List<Empaque> empaques = new List<Empaque>();
+            List<Estibado> estibados = new List<Estibado>();
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "select * from Empaque where RefEmpaque=@RefEmpaque";
-                command.Parameters.Add(new SqlParameter("@RefEmpaque", refempaque));
+                command.CommandText = "select * from Estibado where RefEstibado=@RefEstibado";
+                command.Parameters.Add(new SqlParameter("@RefEstibado", refestibado));
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    Empaque empaque = new Empaque();
-                    empaque.RefEmpaque = reader.GetString(0);
-                    empaque.Producto = new Producto();
-                    empaque.Producto.RefProducto = reader.GetString(1);
-                    empaque.Producto.NombreProducto = reader.GetString(2);
-                    empaque.Producto.PesoProducto = double.Parse(reader.GetString(3));
-                    empaque.Producto.PrecioProducto = double.Parse(reader.GetString(4));
-                    empaque.Largo = decimal.Parse(reader.GetString(5));
-                    empaque.Ancho = decimal.Parse(reader.GetString(6));
-                    empaque.Alto = decimal.Parse(reader.GetString(7));
-                    empaque.PesoEmpaque = decimal.Parse(reader.GetString(8));
-                    empaque.CantidadProductos = int.Parse(reader.GetString(9));
-                    empaque.PrecioProdxCantProd = decimal.Parse(reader.GetString(10));
-                    empaque.PesoEmpaquexPesoProducto = decimal.Parse(reader.GetString(11));
+                    Estibado estibado = new Estibado();
+                    estibado.RefEstibado = reader.GetString(0);
+                    estibado.Embalaje = new Embalaje();
+                    estibado.Embalaje.RefEmbalaje = reader.GetString(1);
+                    estibado.LargoEstibado = decimal.Parse(reader.GetString(2));
+                    estibado.AnchoEstibado = decimal.Parse(reader.GetString(3));
+                    estibado.AltoEstibado = decimal.Parse(reader.GetString(4));
+                    estibado.EmbalajeXLargo = decimal.Parse(reader.GetString(5));
+                    estibado.EmbalajeXAncho = decimal.Parse(reader.GetString(6));
+                    estibado.EmbalajeXAlto = decimal.Parse(reader.GetString(7));
+                    estibado.TotalEmbalajesXEstibas = decimal.Parse(reader.GetString(8));
 
-                    empaques.Add(empaque);
+                    estibados.Add(estibado);
                 }
                 reader.Close();
             }
 
-            return empaques;
+            return estibados;
         }
     }
 }

@@ -147,6 +147,7 @@ namespace Presentación_GUI
             this.BtnConsultarContenedor.TabIndex = 124;
             this.BtnConsultarContenedor.Text = "Consultar";
             this.BtnConsultarContenedor.UseVisualStyleBackColor = false;
+            this.BtnConsultarContenedor.Click += new System.EventHandler(this.BtnConsultarContenedor_Click);
             // 
             // CmbReferenciaConsultaContenedor
             // 
@@ -195,6 +196,7 @@ namespace Presentación_GUI
             this.BtnEditarContenedor.TabIndex = 119;
             this.BtnEditarContenedor.Text = "Editar";
             this.BtnEditarContenedor.UseVisualStyleBackColor = false;
+            this.BtnEditarContenedor.Click += new System.EventHandler(this.BtnEditarContenedor_Click);
             // 
             // BtnActContenedor
             // 
@@ -207,6 +209,7 @@ namespace Presentación_GUI
             this.BtnActContenedor.TabIndex = 118;
             this.BtnActContenedor.Text = "Actualizar";
             this.BtnActContenedor.UseVisualStyleBackColor = false;
+            this.BtnActContenedor.Click += new System.EventHandler(this.BtnActContenedor_Click);
             // 
             // BtnEliminarContenedor
             // 
@@ -219,6 +222,7 @@ namespace Presentación_GUI
             this.BtnEliminarContenedor.TabIndex = 117;
             this.BtnEliminarContenedor.Text = "Eliminar";
             this.BtnEliminarContenedor.UseVisualStyleBackColor = false;
+            this.BtnEliminarContenedor.Click += new System.EventHandler(this.BtnEliminarContenedor_Click);
             // 
             // panel2
             // 
