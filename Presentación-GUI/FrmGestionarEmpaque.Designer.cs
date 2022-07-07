@@ -316,6 +316,7 @@ namespace Presentación_GUI
             this.BtnEliminarEmpaque.TabIndex = 26;
             this.BtnEliminarEmpaque.Text = "Eliminar";
             this.BtnEliminarEmpaque.UseVisualStyleBackColor = false;
+            this.BtnEliminarEmpaque.Click += new System.EventHandler(this.BtnEliminarEmpaque_Click);
             // 
             // BtnActEmpaque
             // 
@@ -340,6 +341,7 @@ namespace Presentación_GUI
             this.BtnEditarEmpaque.TabIndex = 28;
             this.BtnEditarEmpaque.Text = "Editar";
             this.BtnEditarEmpaque.UseVisualStyleBackColor = false;
+            this.BtnEditarEmpaque.Click += new System.EventHandler(this.BtnEditarEmpaque_Click);
             // 
             // label12
             // 
@@ -388,6 +390,7 @@ namespace Presentación_GUI
             this.BtnConsultarEmpaque.TabIndex = 33;
             this.BtnConsultarEmpaque.Text = "Consultar";
             this.BtnConsultarEmpaque.UseVisualStyleBackColor = false;
+            this.BtnConsultarEmpaque.Click += new System.EventHandler(this.BtnConsultarEmpaque_Click);
             // 
             // dataGridViewConsultaEmpaque
             // 

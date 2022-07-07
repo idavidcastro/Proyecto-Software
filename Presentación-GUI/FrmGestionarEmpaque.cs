@@ -28,6 +28,20 @@ namespace Presentación_GUI
             empaqueService = new EmpaqueService(ConfigConnectionString.Cadena);
             productoService = new ProductoService(ConfigConnectionString.Cadena);
             MostrarProductos();
+            MostrarEmpaques();
+            dataGridViewConsultaEmpaque.Columns.Add("RefEmpaque", "RefEmpaque");
+            dataGridViewConsultaEmpaque.Columns.Add("RefProducto", "RefProducto");
+            dataGridViewConsultaEmpaque.Columns.Add("Producto", "Producto");
+            dataGridViewConsultaEmpaque.Columns.Add("PesoProducto", "PesoProducto");
+            dataGridViewConsultaEmpaque.Columns.Add("PrecioProducto", "PrecioProducto");
+            dataGridViewConsultaEmpaque.Columns.Add("Largo", "Largo");
+            dataGridViewConsultaEmpaque.Columns.Add("Ancho", "Ancho");
+            dataGridViewConsultaEmpaque.Columns.Add("Alto", "Alto");
+            dataGridViewConsultaEmpaque.Columns.Add("PesoEmpaque", "PesoEmpaque");
+            dataGridViewConsultaEmpaque.Columns.Add("CantProductos", "CantProductos");
+            dataGridViewConsultaEmpaque.Columns.Add("PrecioProdXCantProdEmpaque", "PrecioProdXCantProdEmpaque");
+            dataGridViewConsultaEmpaque.Columns.Add("PesoEmpaqXPesoProducto", "PesoEmpaqXPesoProducto");
+
             
         }
 
@@ -59,6 +73,21 @@ namespace Presentación_GUI
             while (reader.Read())
             {
                 CmbProductos.Items.Add(reader.GetString(1));
+
+            }
+            cn.Close();
+        }
+        private void MostrarEmpaques()
+        {
+            SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
+            SqlCommand cm = new SqlCommand("select *from Empaque", cn);
+            cn.Open();
+            SqlDataReader reader = cm.ExecuteReader()
+;
+            while (reader.Read())
+            {
+                CmbReferenciaEmpaque.Items.Add(reader.GetString(0));
+                CmbReferenciaConsultaEmpaque.Items.Add(reader.GetString(0));
             }
             cn.Close();
         }
@@ -194,6 +223,59 @@ namespace Presentación_GUI
         private void TxtCantProdEmpaqP_Leave(object sender, EventArgs e)
         {
             Calculos();
+        }
+
+        private void BtnEditarEmpaque_Click(object sender, EventArgs e)
+        {
+            SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
+            cn.Open();
+
+
+            SqlCommand cmmmm = new SqlCommand("select * from Empaque where RefEmpaque= '" + CmbReferenciaEmpaque.Text + "'", cn);
+            SqlDataReader readerrrr = cmmmm.ExecuteReader();
+            if (readerrrr.Read() == true)
+            {
+                TxtRefEmpaque.Text = readerrrr["RefEmpaque"].ToString();
+                CmbProductos.Text= readerrrr["Producto"].ToString();
+                TxtPesoProducto.Text = readerrrr["PesoProducto"].ToString();
+                TxtPrecioProducto.Text = readerrrr["PrecioProduto"].ToString();
+                TxtLargoEmpaque.Text = readerrrr["Largo"].ToString();
+                TxtAnchoEmpaque.Text = readerrrr["Ancho"].ToString();
+                TxtAltoEmpaque.Text = readerrrr["Alto"].ToString();
+                TxtPesoEmpaque.Text = readerrrr["PesoEmpaque"].ToString();
+                TxtCantProdEmpaqP.Text = readerrrr["CantProductos"].ToString();
+                LabelPrecioPrdXCantProEmpaqPri.Text = readerrrr["PrecioProdXCantProdEmpaque"].ToString();
+                LabelPesoEmpaqXPesoProdEmpaqPri.Text = readerrrr["PesoEmpaqXPesoProducto"].ToString();
+                /*
+                    readerrrr["RefContenedor"].ToString(), readerrrr["ValorCarga"].ToString());
+                readerrrr.Close();
+                */
+            }
+
+            cn.Close();
+        }
+
+        private void BtnConsultarEmpaque_Click(object sender, EventArgs e)
+        {
+            SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
+            cn.Open();
+
+
+            SqlCommand cmmmm = new SqlCommand("select * from Empaque where RefEmpaque= '" + CmbReferenciaConsultaEmpaque.Text + "'", cn);
+            SqlDataReader readerrrr = cmmmm.ExecuteReader();
+            if (readerrrr.Read() == true)
+            {
+
+                dataGridViewConsultaEmpaque.Rows.Add(readerrrr["RefEmpaque"].ToString(), readerrrr["RefProducto"].ToString(), readerrrr["Producto"].ToString(), readerrrr["PesoProducto"].ToString(), readerrrr["PrecioProduto"].ToString(), readerrrr["Largo"].ToString(),
+                    readerrrr["Ancho"].ToString(), readerrrr["Alto"].ToString(), readerrrr["PesoEmpaque"].ToString(), readerrrr["CantProductos"].ToString(), readerrrr["PrecioProdXCantProdEmpaque"].ToString(), readerrrr["PesoEmpaqXPesoProducto"].ToString());
+            }
+
+            cn.Close();
+        }
+
+        private void BtnEliminarEmpaque_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

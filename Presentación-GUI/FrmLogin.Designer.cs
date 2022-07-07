@@ -31,8 +31,8 @@ namespace Presentación_GUI
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.Usuario = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtUsuario = new System.Windows.Forms.TextBox();
+            this.TxtContraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnIniciarSesionLogin = new System.Windows.Forms.Button();
             this.BtnCerrarLogin = new System.Windows.Forms.Button();
@@ -57,21 +57,21 @@ namespace Presentación_GUI
             this.Usuario.TabIndex = 1;
             this.Usuario.Text = "Usuario:";
             // 
-            // textBox1
+            // TxtUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(484, 86);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 31);
-            this.textBox1.TabIndex = 2;
+            this.TxtUsuario.Location = new System.Drawing.Point(484, 86);
+            this.TxtUsuario.Multiline = true;
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.Size = new System.Drawing.Size(186, 31);
+            this.TxtUsuario.TabIndex = 2;
             // 
-            // textBox2
+            // TxtContraseña
             // 
-            this.textBox2.Location = new System.Drawing.Point(484, 156);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 29);
-            this.textBox2.TabIndex = 4;
+            this.TxtContraseña.Location = new System.Drawing.Point(484, 156);
+            this.TxtContraseña.Multiline = true;
+            this.TxtContraseña.Name = "TxtContraseña";
+            this.TxtContraseña.Size = new System.Drawing.Size(186, 29);
+            this.TxtContraseña.TabIndex = 4;
             // 
             // label1
             // 
@@ -117,9 +117,9 @@ namespace Presentación_GUI
             this.ClientSize = new System.Drawing.Size(782, 425);
             this.Controls.Add(this.BtnCerrarLogin);
             this.Controls.Add(this.BtnIniciarSesionLogin);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TxtContraseña);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.Usuario);
             this.Controls.Add(this.panel1);
             this.Name = "FrmLogin";
@@ -135,8 +135,8 @@ namespace Presentación_GUI
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Usuario;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtUsuario;
+        private System.Windows.Forms.TextBox TxtContraseña;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnIniciarSesionLogin;
         private System.Windows.Forms.Button BtnCerrarLogin;

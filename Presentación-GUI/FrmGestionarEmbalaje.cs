@@ -109,6 +109,25 @@ namespace Presentación_GUI
 
         private void CmbRefEmpaqueEnEmbalaje_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+
+
+
+            //ValidarCampos();
+        }
+
+        private void TxtAltoEmbalaje_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtAltoEmbalaje_Leave(object sender, EventArgs e)
+        {
+            Calculos();
+        }
+
+        private void BtnConsultarEmbalaje_Click(object sender, EventArgs e)
+        {
             SqlConnection cn = new SqlConnection(ConfigConnectionString.Cadena);
             cn.Open();
             SqlCommand cm = new SqlCommand("select * from Empaque where RefEmpaque= '" + CmbRefEmpaqueEnEmbalaje.Text + "'", cn);
@@ -129,20 +148,6 @@ namespace Presentación_GUI
 
             }
             cn.Close();
-
-
-
-            //ValidarCampos();
-        }
-
-        private void TxtAltoEmbalaje_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtAltoEmbalaje_Leave(object sender, EventArgs e)
-        {
-            Calculos();
         }
     }
 }

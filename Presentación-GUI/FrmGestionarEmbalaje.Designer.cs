@@ -99,6 +99,7 @@ namespace Presentación_GUI
             this.BtnConsultarEmbalaje.TabIndex = 67;
             this.BtnConsultarEmbalaje.Text = "Consultar";
             this.BtnConsultarEmbalaje.UseVisualStyleBackColor = false;
+            this.BtnConsultarEmbalaje.Click += new System.EventHandler(this.BtnConsultarEmbalaje_Click);
             // 
             // CmbReferenciaConsultaEmbalaje
             // 

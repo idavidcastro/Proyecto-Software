@@ -19,18 +19,16 @@ create table Contenedor(RefContenedor nvarchar(30) primary key, RefEstibado nvar
 
 create table Orden(RefOrden nvarchar(30) primary key, RefContenedor nvarchar(30), ValorCarga nvarchar(30));
 
+create table Usuario(NombreUsuario nvarchar(30) primary key, contraseña nvarchar(30) );
+
+insert into Usuario values ('ivan', '12345')
+insert into Usuario values ('daniel','12345');
+
 alter table Empaque add constraint FK_RefProducto foreign key (RefProducto) references Producto(RefProducto);
 alter table Embalaje add constraint FK_RefEmpaque foreign key (RefEmpaque) references Empaque(RefEmpaque);
 alter table Estibado add constraint FK_RefEmbalaje foreign key (RefEmbalaje) references Embalaje(RefEmbalaje);
 alter table Contenedor add constraint FK_RefEstibado foreign key (RefEstibado) references Estibado(RefEstibado);
 alter table Orden add constraint FK_RefContenedor foreign key (RefContenedor) references Contenedor(RefContenedor);
-
-
-drop table Producto;
-drop table Empaque;
-drop table Embalaje;
-drop table Contenedor;
-drop table Orden;
 
 
 select *from Producto;
@@ -45,4 +43,5 @@ select *from Contenedor;
 
 select * from Orden;
 
-update Empaque set Ancho = '10' where RefEmpaque ='EMP04';
+select * from Usuario
+

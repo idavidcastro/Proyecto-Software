@@ -817,7 +817,7 @@ namespace Presentación_GUI
             this.Controls.Add(this.PanelRegistrarOrden);
             this.Name = "FrmOrden";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmOrden";
+            this.Text = "Orden";
             this.Load += new System.EventHandler(this.FrmOrden_Load);
             this.PanelConsultarOrden.ResumeLayout(false);
             this.PanelConsultarOrden.PerformLayout();
